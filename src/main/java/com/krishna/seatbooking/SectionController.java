@@ -20,10 +20,10 @@ public class SectionController {
 	@Autowired
 	private SectionRepository sectionsRepository;
 
-    @RequestMapping("/")
+    //@RequestMapping("/")
     public String home(Model model) {
-    	val x = sectionsRepository.findAll();
-    	model.addAttribute("sections", x);
+    	//val x = sectionsRepository.findAll();
+    	///model.addAttribute("sections", x);
     	
         return "home";
     }
