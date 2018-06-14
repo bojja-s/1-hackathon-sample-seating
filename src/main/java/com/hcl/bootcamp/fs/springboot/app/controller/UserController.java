@@ -53,13 +53,13 @@ public class UserController {
 
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-//		List<Section> sections = sectionsRepository.findAll();
-//		System.out.println("************************");
-//		System.out.println(sections);
-//		model.addAttribute("sections", sections);
-//		System.out.println( sections.get(0).getId());
-//		System.out.println( sections.get(0).getName());
-//		System.out.println("************************");
+		List<Section> sections = sectionsRepository.findAll();
+		System.out.println("************************");
+		System.out.println(sections);
+		model.addAttribute("sections", sections);
+		System.out.println( sections.get(0).getId());
+		System.out.println( sections.get(0).getName());
+		System.out.println("************************");
 		return "screen2";
 	}
 
