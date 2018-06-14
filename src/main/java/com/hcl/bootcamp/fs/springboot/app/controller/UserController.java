@@ -75,40 +75,7 @@ public class UserController {
 	public String login(Model model, String error, String logout) {
 		System.out.println("home GET");
 	
-		Section ii_Section = new Section();
-		ii_Section.setId(1L);
-		Seat i_Seat = new Seat();
-		i_Seat.setId(1L);
-		i_Seat.setName("1_6");
-		i_Seat.setSection(ii_Section);
-		i_Seat.setAvailable(Boolean.TRUE);
 		
-		List<Seat> i_SeatList = new ArrayList<Seat>();
-		i_SeatList.add(i_Seat);
-		Section i_Section = new Section();
-		i_Section.setId(1L);
-		i_Section.setName("103");
-		i_Section.setLayoutInfo("___fffffff");
-		i_Section.setSeats(i_SeatList);
-		sectionsRepository.save(i_Section);
-		
-		seatRepository.save(i_Seat);	
-		
-		System.out.println("login GET [" + logout + "] " + " [" + error +"]");
-		model.addAttribute("userForm", new User());
-		if (error != null)
-			model.addAttribute("error", "Your username and password is invalid.");
-
-		if (logout != null)
-			model.addAttribute("message", "You have been logged out successfully.");
-
-		LinkedHashMap<Integer, String> states = new LinkedHashMap<Integer, String>();
-		states.put(1, "Alabama");
-		states.put(2, "Alaska");
-		states.put(3, "Arizona");
-		states.put(4, "Arkansas");
-		states.put(5, "California");		
-		model.addAttribute("states", states);
 		return "login";
 	}
 
