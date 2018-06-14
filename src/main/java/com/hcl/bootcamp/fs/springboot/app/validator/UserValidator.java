@@ -11,8 +11,8 @@ import org.springframework.validation.Validator;
 
 @Component
 public class UserValidator implements Validator {
-    @Autowired
-    private UserService userService;
+    //@Autowired
+    //private UserService userService;
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -41,9 +41,9 @@ public class UserValidator implements Validator {
         if (user.getEmail().length() < 6 || user.getEmail().length() > 32) {
             errors.rejectValue("email", "Size.userForm.firstName");
         }        
-        if (userService.findByUsername(user.getEmail()) != null) {
+        //if (userService.findByUsername(user.getEmail()) != null) {
             errors.rejectValue("email", "Duplicate.userForm.username");
-        }        
+        //}        
         if (user.getLocation().length() < 6 || user.getLocation().length() > 32) {
             errors.rejectValue("location", "Size.userForm.location");
         }                 
