@@ -24,11 +24,11 @@ import com.hcl.bootcamp.fs.springboot.app.validator.UserValidator;
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UserService userService;
+	///@Autowired
+	///private UserService userService;
 
-	@Autowired
-	private SecurityService securityService;
+	///@Autowired
+	//private SecurityService securityService;
 
 	@Autowired
 	private UserValidator userValidator;
@@ -57,17 +57,7 @@ public class UserController {
 			return "login";
 		}
 
-		userService.save(userForm);
-
-		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
-		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println( sections.get(0).getId());
-		System.out.println( sections.get(0).getName());
-		System.out.println("************************");
+		
 		return "screen2";
 	}
 
@@ -82,13 +72,7 @@ public class UserController {
 	@RequestMapping(value = { "/", "/screen2" }, method = RequestMethod.GET)
 	public String welcome(Model model) {
 		System.out.println("screen2 GET");
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println( sections.get(0).getId());
-		System.out.println( sections.get(0).getName());
-		System.out.println("************************");			
+		
 		return "screen2";
 	}
 }
