@@ -1,13 +1,13 @@
 package com.hcl.bootcamp.fs.springboot.app.validator;
 
-import com.hcl.bootcamp.fs.springboot.app.model.User;
-import com.hcl.bootcamp.fs.springboot.app.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
+import com.hcl.bootcamp.fs.springboot.app.model.User;
+import com.hcl.bootcamp.fs.springboot.app.model.UserForm;
+import com.hcl.bootcamp.fs.springboot.app.service.UserService;
 
 @Component
 public class UserValidator implements Validator {
@@ -21,14 +21,14 @@ public class UserValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        User user = (User) o;
+    	UserForm user = (UserForm) o;
         System.out.println("1." + user.getFirstName());
         System.out.println("2." + user.getLastName());
         System.out.println("3." + user.getEmail());
         System.out.println("4." + user.getPassword());
         //System.out.println("5." + user.getPassword());
         System.out.println("6." + user.getLocation());
-        System.out.println("7." + user.getState());
+        //System.out.println("7." + user.getState());
         
         //ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
 
