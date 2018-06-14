@@ -57,8 +57,6 @@ public class UserController {
 		System.out.println("************************");
 		System.out.println(sections);
 		model.addAttribute("sections", sections);
-		System.out.println( sections.get(0).getId());
-		System.out.println( sections.get(0).getName());
 		System.out.println("************************");
 		return "screen2";
 	}
@@ -111,8 +109,6 @@ public class UserController {
 		System.out.println("************************");
 		System.out.println(sections);
 		model.addAttribute("sections", sections);
-		System.out.println( sections.get(0).getId());
-		System.out.println( sections.get(0).getName());
 		System.out.println("************************");			
 		return "screen2";
 	}
