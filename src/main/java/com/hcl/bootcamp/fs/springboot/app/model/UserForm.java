@@ -10,6 +10,7 @@ public class UserForm {
 	private String email;
 	private String location;
 	private String country;
+	private String state;
 	private String password;
 	private String passwordConfirm;
 
