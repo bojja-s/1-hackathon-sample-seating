@@ -25,6 +25,6 @@ public class LoginController {
     	val x = sectionsRepository.findAll();
     	model.addAttribute("sections", x);
     	
-        return "home";
+        return "login";
     }
 }
