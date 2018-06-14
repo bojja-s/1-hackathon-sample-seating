@@ -1,6 +1,6 @@
 package com.hcl.bootcamp.fs.springboot.app.controller;
 
-import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.hcl.bootcamp.fs.springboot.app.jpa.SeatRepository;
 import com.hcl.bootcamp.fs.springboot.app.jpa.SectionRepository;
-import com.hcl.bootcamp.fs.springboot.app.model.Seat;
 import com.hcl.bootcamp.fs.springboot.app.model.Section;
 import com.hcl.bootcamp.fs.springboot.app.model.User;
+import com.hcl.bootcamp.fs.springboot.app.model.UserForm;
 import com.hcl.bootcamp.fs.springboot.app.service.SecurityService;
 import com.hcl.bootcamp.fs.springboot.app.service.UserService;
 import com.hcl.bootcamp.fs.springboot.app.validator.UserValidator;
@@ -40,7 +39,7 @@ public class UserController {
 //	private SeatRepository seatRepository;	
 
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+	public String registration(@ModelAttribute("userForm") UserForm userForm, BindingResult bindingResult, Model model) {
 		System.out.println("registration POST");
 		userValidator.validate(userForm, bindingResult);
 
@@ -49,7 +48,7 @@ public class UserController {
 			return "login";
 		}
 
-		userService.save(userForm);
+		userService.save(buildUser(userForm));
 
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
@@ -112,4 +111,11 @@ public class UserController {
 		System.out.println("************************");			
 		return "screen2";
 	}
+	private User buildUser(UserForm userForm) {
+		User user = User.builder().updatedAt(Calendar.getInstance().getTime()).userName(userForm.getEmail())
+				.firstName(userForm.getFirstName()).lastName(userForm.getLastName()).enable(true)
+				.location(userForm.getLocation()).country(userForm.getCountry()).password(userForm.getPassword())
+				.createdAt(Calendar.getInstance().getTime()).build();
+		return user;
+	}	
 }

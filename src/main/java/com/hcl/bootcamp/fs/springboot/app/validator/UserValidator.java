@@ -26,7 +26,7 @@ public class UserValidator implements Validator {
         System.out.println("2." + user.getLastName());
         System.out.println("3." + user.getEmail());
         System.out.println("4." + user.getPassword());
-        System.out.println("5." + user.getPasswordConfirm());
+        //System.out.println("5." + user.getPassword());
         System.out.println("6." + user.getLocation());
         System.out.println("7." + user.getState());
         
@@ -41,7 +41,7 @@ public class UserValidator implements Validator {
         if (user.getEmail().length() < 6 || user.getEmail().length() > 32) {
             errors.rejectValue("email", "Size.userForm.firstName");
         }        
-        if (userService.findByUsername(user.getEmail()) != null) {
+        if (userService.findByEmail(user.getEmail()) != null) {
             errors.rejectValue("email", "Duplicate.userForm.username");
         }        
         if (user.getLocation().length() < 6 || user.getLocation().length() > 32) {
@@ -55,8 +55,8 @@ public class UserValidator implements Validator {
             errors.rejectValue("password", "Size.userForm.password");
         }
 
-        if (!user.getPasswordConfirm().equals(user.getPassword())) {
-            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
-        }
+//        if (!user.getPasswordConfirm().equals(user.getPassword())) {
+//            errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
+//        }
     }
 }
