@@ -24,11 +24,11 @@ import com.hcl.bootcamp.fs.springboot.app.validator.UserValidator;
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UserService userService;
+	//@Autowired
+	//private UserService userService;
 
-	@Autowired
-	private SecurityService securityService;
+	///@Autowired
+	///private SecurityService securityService;
 
 	@Autowired
 	private UserValidator userValidator;
@@ -57,10 +57,10 @@ public class UserController {
 			return "login";
 		}
 
-		userService.save(userForm);
+		////userService.save(userForm);
 
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
-		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
+		///securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
 		List<Section> sections = sectionsRepository.findAll();
 		System.out.println("************************");
 		System.out.println(sections);
