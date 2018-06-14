@@ -14,7 +14,7 @@ import lombok.val;
 
 @CrossOrigin
 @Controller
-public class SectionController {
+public class LoginController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
