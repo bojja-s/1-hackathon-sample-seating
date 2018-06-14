@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 //@Data
-@Table(name = "Section")
+@Table(name = "section")
 public class Section {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

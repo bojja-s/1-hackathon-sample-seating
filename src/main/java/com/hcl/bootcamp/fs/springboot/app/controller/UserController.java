@@ -35,17 +35,9 @@ public class UserController {
 
 	@Autowired
 	private SectionRepository sectionsRepository;
-	
-	@Autowired
-	private SeatRepository seatRepository;	
-	
-//	@RequestMapping(value = "/registration", method = RequestMethod.GET)
-//	public String registration(Model model) {
-//		System.out.println("registration GET");
-//		model.addAttribute("userForm", new User());
-//
-//		return "registration";
-//	}
+//	
+//	@Autowired
+//	private SeatRepository seatRepository;	
 
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
@@ -61,38 +53,38 @@ public class UserController {
 
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println( sections.get(0).getId());
-		System.out.println( sections.get(0).getName());
-		System.out.println("************************");
+//		List<Section> sections = sectionsRepository.findAll();
+//		System.out.println("************************");
+//		System.out.println(sections);
+//		model.addAttribute("sections", sections);
+//		System.out.println( sections.get(0).getId());
+//		System.out.println( sections.get(0).getName());
+//		System.out.println("************************");
 		return "screen2";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
 		System.out.println("home GET");
-	
-		Section ii_Section = new Section();
-		ii_Section.setId(1L);
-		Seat i_Seat = new Seat();
-		i_Seat.setId(1L);
-		i_Seat.setName("1_6");
-		i_Seat.setSection(ii_Section);
-		i_Seat.setAvailable(Boolean.TRUE);
-		
-		List<Seat> i_SeatList = new ArrayList<Seat>();
-		i_SeatList.add(i_Seat);
-		Section i_Section = new Section();
-		i_Section.setId(1L);
-		i_Section.setName("103");
-		i_Section.setLayoutInfo("___fffffff");
-		i_Section.setSeats(i_SeatList);
-		sectionsRepository.save(i_Section);
-		
-		seatRepository.save(i_Seat);	
+//	
+//		Section ii_Section = new Section();
+//		ii_Section.setId(1L);
+//		Seat i_Seat = new Seat();
+//		i_Seat.setId(1L);
+//		i_Seat.setName("1_6");
+//		i_Seat.setSection(ii_Section);
+//		i_Seat.setAvailable(Boolean.TRUE);
+//		
+//		List<Seat> i_SeatList = new ArrayList<Seat>();
+//		i_SeatList.add(i_Seat);
+//		Section i_Section = new Section();
+//		i_Section.setId(1L);
+//		i_Section.setName("103");
+//		i_Section.setLayoutInfo("___fffffff");
+//		i_Section.setSeats(i_SeatList);
+//		sectionsRepository.save(i_Section);
+//		
+//		seatRepository.save(i_Seat);	
 		
 		System.out.println("login GET [" + logout + "] " + " [" + error +"]");
 		model.addAttribute("userForm", new User());
