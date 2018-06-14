@@ -1,10 +1,8 @@
-package com.hcl.bootcamp.fs.springboot.app.jpa;
+package com.krishna.seatbooking.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.hcl.bootcamp.fs.springboot.app.model.Section;
-
-
+import com.krishna.seatbooking.dto.Section;
 
 public interface SectionRepository extends JpaRepository<Section, Long> {
 }
