@@ -2,7 +2,6 @@ package com.hcl.bootcamp.fs.springboot.app.controller;
 
 import java.util.Calendar;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,10 +48,17 @@ public class UserController {
 			model.addAttribute("states", getStates());
 			return "login";
 		}
+
 		userService.save(buildUser(userForm));
+
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-		return "redirect:/screen2";
+		List<Section> sections = sectionsRepository.findAll();
+		System.out.println("************************");
+		System.out.println(sections);
+		model.addAttribute("sections", sections);
+		System.out.println("************************");
+		return "screen2";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -72,7 +78,16 @@ public class UserController {
 		return "login";
 	}
 
-
+	@RequestMapping(value = { "/", "/screen2" }, method = RequestMethod.GET)
+	public String welcome(Model model) {
+		System.out.println("screen2 GET");
+		List<Section> sections = sectionsRepository.findAll();
+		System.out.println("************************");
+		System.out.println(sections);
+		model.addAttribute("sections", sections);
+		System.out.println("************************");			
+		return "screen2";
+	}
 	private User buildUser(UserForm userForm) {
 		User user = User.builder().updatedAt(Calendar.getInstance().getTime()).userName(userForm.getEmail())
 				.firstName(userForm.getFirstName()).lastName(userForm.getLastName()).enable(true)
