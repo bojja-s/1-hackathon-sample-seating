@@ -18,11 +18,14 @@ public class SectionController {
 	@Autowired
 	private SectionRepository sectionsRepository;
 
-	@RequestMapping(value = { "/", "/home" })
-    public String home(Model model) {
-    	val x = sectionsRepository.findAll();
-    	model.addAttribute("sections", x);
-    	
-        return "home";
-    }
+	@RequestMapping(value = { "/", "/screen2" }, method = RequestMethod.GET)
+	public String welcome(Model model) {
+		System.out.println("screen2 GET");
+		List<Section> sections = sectionsRepository.findAll();
+		System.out.println("************************");
+		System.out.println(sections);
+		model.addAttribute("sections", sections);
+		System.out.println("************************");			
+		return "screen2";
+	}	
 }
