@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hcl.bootcamp.fs.springboot.app.jpa.SectionRepository;
+import com.hcl.bootcamp.fs.springboot.app.model.Section;
 import lombok.val;
 
 @CrossOrigin

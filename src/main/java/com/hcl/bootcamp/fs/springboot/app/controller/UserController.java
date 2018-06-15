@@ -49,17 +49,10 @@ public class UserController {
 			model.addAttribute("states", getStates());
 			return "login";
 		}
-
 		userService.save(buildUser(userForm));
-
 		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println("************************");
-		return "screen2";
+		return "redirect:/screen2";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
