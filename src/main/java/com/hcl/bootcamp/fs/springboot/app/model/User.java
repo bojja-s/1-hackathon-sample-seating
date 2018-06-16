@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,8 +39,11 @@ public class User {
 	private String userName;
 	private String location;
 	private String country;
+	@Transient
 	private String state;
+	@Transient
 	private String email;
+	@Transient
 	private String passwordConfirm;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

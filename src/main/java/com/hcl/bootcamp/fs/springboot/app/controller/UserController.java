@@ -2,9 +2,11 @@ package com.hcl.bootcamp.fs.springboot.app.controller;
 
 import java.util.Calendar;
 import java.util.LinkedHashMap;
-import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,8 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.hcl.bootcamp.fs.springboot.app.jpa.SectionRepository;
-import com.hcl.bootcamp.fs.springboot.app.model.Section;
 import com.hcl.bootcamp.fs.springboot.app.model.User;
 import com.hcl.bootcamp.fs.springboot.app.model.UserForm;
 import com.hcl.bootcamp.fs.springboot.app.service.SecurityService;
@@ -22,6 +22,8 @@ import com.hcl.bootcamp.fs.springboot.app.validator.UserValidator;
 
 @Controller
 public class UserController {
+
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserService userService;
@@ -33,89 +35,65 @@ public class UserController {
 	private UserValidator userValidator;
 
 	@Autowired
-	private SectionRepository sectionsRepository;
-//	
-//	@Autowired
-//	private SeatRepository seatRepository;	
-
+	private PasswordEncoder passwordEncoder;
+	
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String registration(@ModelAttribute("userForm") UserForm userForm, BindingResult bindingResult, Model model) {
-		System.out.println("registration POST");
+	public String registration(@ModelAttribute("userForm") UserForm userForm, BindingResult bindingResult,Model model) {
+		if (logger.isInfoEnabled()){
+			logger.info("UserController registration POST" );
+		}
 		userValidator.validate(userForm, bindingResult);
-
-		System.out.println(bindingResult.hasErrors());
 		if (bindingResult.hasErrors()) {
 			return "login";
 		}
-
 		userService.save(buildUser(userForm));
-
-		///securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 		securityService.autologin(userForm.getEmail(), userForm.getPasswordConfirm());
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println("************************");
-		return "screen2";
+		return "redirect:/screen2";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model, String error, String logout) {
-		System.out.println("home GET");
-//	
-//		Section ii_Section = new Section();
-//		ii_Section.setId(1L);
-//		Seat i_Seat = new Seat();
-//		i_Seat.setId(1L);
-//		i_Seat.setName("1_6");
-//		i_Seat.setSection(ii_Section);
-//		i_Seat.setAvailable(Boolean.TRUE);
-//		
-//		List<Seat> i_SeatList = new ArrayList<Seat>();
-//		i_SeatList.add(i_Seat);
-//		Section i_Section = new Section();
-//		i_Section.setId(1L);
-//		i_Section.setName("103");
-//		i_Section.setLayoutInfo("___fffffff");
-//		i_Section.setSeats(i_SeatList);
-//		sectionsRepository.save(i_Section);
-//		
-//		seatRepository.save(i_Seat);	
-		
-		System.out.println("login GET [" + logout + "] " + " [" + error +"]");
-		model.addAttribute("userForm", new User());
-		if (error != null)
-			model.addAttribute("error", "Your username and password is invalid.");
+		if (logger.isInfoEnabled()){
+			logger.info("UserController login GET" );
+		}
 
-		if (logout != null)
+		System.out.println("login GET [" + logout + "] " + " [" + error + "]");
+		model.addAttribute("userForm", new User());
+		if (error != null) {
+			model.addAttribute("error", "Your username and password is invalid.");
+		}
+
+		if (logout != null) {
 			model.addAttribute("message", "You have been logged out successfully.");
+		}
 
 		LinkedHashMap<Integer, String> states = new LinkedHashMap<Integer, String>();
 		states.put(1, "Alabama");
 		states.put(2, "Alaska");
 		states.put(3, "Arizona");
 		states.put(4, "Arkansas");
-		states.put(5, "California");		
+		states.put(5, "California");
 		model.addAttribute("states", states);
 		return "login";
 	}
 
-	@RequestMapping(value = { "/", "/screen2" }, method = RequestMethod.GET)
-	public String welcome(Model model) {
-		System.out.println("screen2 GET");
-		List<Section> sections = sectionsRepository.findAll();
-		System.out.println("************************");
-		System.out.println(sections);
-		model.addAttribute("sections", sections);
-		System.out.println("************************");			
-		return "screen2";
-	}
 	private User buildUser(UserForm userForm) {
+		if (logger.isInfoEnabled()){
+			logger.info("UserController buildUser" );
+		}
 		User user = User.builder().updatedAt(Calendar.getInstance().getTime()).userName(userForm.getEmail())
 				.firstName(userForm.getFirstName()).lastName(userForm.getLastName()).enable(true)
-				.location(userForm.getLocation()).country(userForm.getCountry()).password(userForm.getPassword())
+				.location(userForm.getLocation()).country(userForm.getCountry()).password(passwordEncoder.encode(userForm.getPassword()))
 				.createdAt(Calendar.getInstance().getTime()).build();
+		if (logger.isInfoEnabled()){
+			logger.info( user.getUserName() );
+			logger.info( user.getEmail() );
+			logger.info( user.getFirstName() );
+			logger.info( user.getLastName() );
+			logger.info( user.getLocation() );
+			logger.info( user.getCountry() );
+			logger.info( user.getPassword() );
+		}		
 		return user;
-	}	
+	}
 }
