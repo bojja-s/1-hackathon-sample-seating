@@ -1,348 +1,3 @@
-2018-06-16T08:22:38.523209+00:00 app[web.1]: 2018-06-16 08:22:38.522  INFO 4 --- [ost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2018-06-16T08:22:40.407503+00:00 app[web.1]: 2018-06-16 08:22:40.406  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-06-16T08:22:40.407823+00:00 app[web.1]: 2018-06-16 08:22:40.407  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11394 ms
-2018-06-16T08:22:41.009358+00:00 app[web.1]: 2018-06-16 08:22:41.009 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Filter initializer bean 'securityFilterChainRegistration'; order=-100, resource=class path resource [org/springframework/boot/autoconfigure/security/servlet/SecurityFilterAutoConfiguration.class]
-2018-06-16T08:22:41.009626+00:00 app[web.1]: 2018-06-16 08:22:41.009 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Added existing Servlet initializer bean 'dispatcherServletRegistration'; order=2147483647, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]
-2018-06-16T08:22:41.248421+00:00 app[web.1]: 2018-06-16 08:22:41.248 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'characterEncodingFilter'; order=-2147483648, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/HttpEncodingAutoConfiguration.class]
-2018-06-16T08:22:41.248537+00:00 app[web.1]: 2018-06-16 08:22:41.248 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'hiddenHttpMethodFilter'; order=-10000, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
-2018-06-16T08:22:41.248739+00:00 app[web.1]: 2018-06-16 08:22:41.248 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'httpPutFormContentFilter'; order=-9900, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]
-2018-06-16T08:22:41.253158+00:00 app[web.1]: 2018-06-16 08:22:41.252 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.ServletContextInitializerBeans : Created Filter initializer for bean 'requestContextFilter'; order=-105, resource=class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]
-2018-06-16T08:22:41.315638+00:00 app[web.1]: 2018-06-16 08:22:41.315  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-06-16T08:22:41.316234+00:00 app[web.1]: 2018-06-16 08:22:41.316  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-06-16T08:22:41.316369+00:00 app[web.1]: 2018-06-16 08:22:41.316  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-06-16T08:22:41.316507+00:00 app[web.1]: 2018-06-16 08:22:41.316  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-06-16T08:22:41.317258+00:00 app[web.1]: 2018-06-16 08:22:41.317  INFO 4 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2018-06-16T08:22:41.317481+00:00 app[web.1]: 2018-06-16 08:22:41.317  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2018-06-16T08:22:41.529054+00:00 app[web.1]: 2018-06-16 08:22:41.528 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Initializing filter 'requestContextFilter'
-2018-06-16T08:22:41.539693+00:00 app[web.1]: 2018-06-16 08:22:41.533 DEBUG 4 --- [ost-startStop-1] o.s.b.w.s.f.OrderedRequestContextFilter  : Filter 'requestContextFilter' configured successfully
-2018-06-16T08:22:41.540794+00:00 app[web.1]: 2018-06-16 08:22:41.540 DEBUG 4 --- [ost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Initializing filter 'httpPutFormContentFilter'
-2018-06-16T08:22:41.540920+00:00 app[web.1]: 2018-06-16 08:22:41.540 DEBUG 4 --- [ost-startStop-1] .b.w.s.f.OrderedHttpPutFormContentFilter : Filter 'httpPutFormContentFilter' configured successfully
-2018-06-16T08:22:41.541521+00:00 app[web.1]: 2018-06-16 08:22:41.541 DEBUG 4 --- [ost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Initializing filter 'hiddenHttpMethodFilter'
-2018-06-16T08:22:41.541632+00:00 app[web.1]: 2018-06-16 08:22:41.541 DEBUG 4 --- [ost-startStop-1] .s.b.w.s.f.OrderedHiddenHttpMethodFilter : Filter 'hiddenHttpMethodFilter' configured successfully
-2018-06-16T08:22:41.541916+00:00 app[web.1]: 2018-06-16 08:22:41.541 DEBUG 4 --- [ost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Initializing filter 'characterEncodingFilter'
-2018-06-16T08:22:41.542024+00:00 app[web.1]: 2018-06-16 08:22:41.541 DEBUG 4 --- [ost-startStop-1] s.b.w.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured successfully
-2018-06-16T08:22:41.542593+00:00 app[web.1]: 2018-06-16 08:22:41.542 DEBUG 4 --- [ost-startStop-1] .DelegatingFilterProxyRegistrationBean$1 : Initializing filter 'springSecurityFilterChain'
-2018-06-16T08:22:41.547693+00:00 app[web.1]: 2018-06-16 08:22:41.547 DEBUG 4 --- [ost-startStop-1] .DelegatingFilterProxyRegistrationBean$1 : Filter 'springSecurityFilterChain' configured successfully
-2018-06-16T08:22:42.503391+00:00 app[web.1]: 2018-06-16 08:22:42.503  INFO 4 --- [           main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
-2018-06-16T08:22:42.596103+00:00 app[web.1]: 2018-06-16 08:22:42.569  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2018-06-16T08:22:43.855743+00:00 app[web.1]: 2018-06-16 08:22:43.854  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2018-06-16T08:22:43.903215+00:00 app[web.1]: 2018-06-16 08:22:43.902  INFO 4 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://ec2-23-21-238-28.compute-1.amazonaws.com:5432/d798ju9hj2tj13 (PostgreSQL 10.4)
-2018-06-16T08:22:44.347131+00:00 app[web.1]: 2018-06-16 08:22:44.346  INFO 4 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.179s)
-2018-06-16T08:22:44.546840+00:00 app[web.1]: 2018-06-16 08:22:44.545  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 6
-2018-06-16T08:22:44.550246+00:00 app[web.1]: 2018-06-16 08:22:44.550  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
-2018-06-16T08:22:45.349919+00:00 app[web.1]: 2018-06-16 08:22:45.349  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-06-16T08:22:45.439935+00:00 app[web.1]: 2018-06-16 08:22:45.439  INFO 4 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-2018-06-16T08:22:45.439939+00:00 app[web.1]: name: default
-2018-06-16T08:22:45.439940+00:00 app[web.1]: ...]
-2018-06-16T08:22:45.641366+00:00 app[web.1]: 2018-06-16 08:22:45.638  INFO 4 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
-2018-06-16T08:22:45.645485+00:00 app[web.1]: 2018-06-16 08:22:45.645  INFO 4 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-06-16T08:22:45.772759+00:00 app[web.1]: 2018-06-16 08:22:45.772  INFO 4 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-06-16T08:22:46.518144+00:00 app[web.1]: 2018-06-16 08:22:46.517  INFO 4 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
-2018-06-16T08:22:46.568386+00:00 app[web.1]: 2018-06-16 08:22:46.568  INFO 4 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
-2018-06-16T08:22:46.575462+00:00 app[web.1]: 2018-06-16 08:22:46.575  INFO 4 --- [           main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@78123e82
-2018-06-16T08:22:48.491172+00:00 app[web.1]: 2018-06-16 08:22:48.490 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table seat drop constraint if exists FKhxi4f44gv7s6u5a90ehw1g0x3
-2018-06-16T08:22:48.491360+00:00 app[web.1]: Hibernate: alter table seat drop constraint if exists FKhxi4f44gv7s6u5a90ehw1g0x3
-2018-06-16T08:22:48.496910+00:00 app[web.1]: 2018-06-16 08:22:48.496 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table users_roles drop constraint if exists FKj6m8fwv7oqv74fcehir1a9ffy
-2018-06-16T08:22:48.497048+00:00 app[web.1]: Hibernate: alter table users_roles drop constraint if exists FKj6m8fwv7oqv74fcehir1a9ffy
-2018-06-16T08:22:48.499496+00:00 app[web.1]: 2018-06-16 08:22:48.499 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table users_roles drop constraint if exists FK2o0jvgh89lemvvo17cbqvdxaa
-2018-06-16T08:22:48.499610+00:00 app[web.1]: Hibernate: alter table users_roles drop constraint if exists FK2o0jvgh89lemvvo17cbqvdxaa
-2018-06-16T08:22:48.502516+00:00 app[web.1]: 2018-06-16 08:22:48.502 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop table if exists roles cascade
-2018-06-16T08:22:48.502637+00:00 app[web.1]: Hibernate: drop table if exists roles cascade
-2018-06-16T08:22:48.509357+00:00 app[web.1]: 2018-06-16 08:22:48.509 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop table if exists seat cascade
-2018-06-16T08:22:48.509691+00:00 app[web.1]: Hibernate: drop table if exists seat cascade
-2018-06-16T08:22:48.518136+00:00 app[web.1]: 2018-06-16 08:22:48.517 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop table if exists section cascade
-2018-06-16T08:22:48.518211+00:00 app[web.1]: Hibernate: drop table if exists section cascade
-2018-06-16T08:22:48.525602+00:00 app[web.1]: 2018-06-16 08:22:48.525 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop table if exists users cascade
-2018-06-16T08:22:48.525679+00:00 app[web.1]: Hibernate: drop table if exists users cascade
-2018-06-16T08:22:48.533920+00:00 app[web.1]: 2018-06-16 08:22:48.533 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop table if exists users_roles cascade
-2018-06-16T08:22:48.535875+00:00 app[web.1]: Hibernate: drop table if exists users_roles cascade
-2018-06-16T08:22:48.545551+00:00 app[web.1]: 2018-06-16 08:22:48.545 DEBUG 4 --- [           main] org.hibernate.SQL                        : drop sequence if exists hibernate_sequence
-2018-06-16T08:22:48.548976+00:00 app[web.1]: Hibernate: drop sequence if exists hibernate_sequence
-2018-06-16T08:22:48.577577+00:00 app[web.1]: 2018-06-16 08:22:48.577 DEBUG 4 --- [           main] org.hibernate.SQL                        : create sequence hibernate_sequence start 1 increment 1
-2018-06-16T08:22:48.577614+00:00 app[web.1]: Hibernate: create sequence hibernate_sequence start 1 increment 1
-2018-06-16T08:22:48.594737+00:00 app[web.1]: 2018-06-16 08:22:48.594 DEBUG 4 --- [           main] org.hibernate.SQL                        : create table roles (id int8 not null, name varchar(255), primary key (id))
-2018-06-16T08:22:48.594805+00:00 app[web.1]: Hibernate: create table roles (id int8 not null, name varchar(255), primary key (id))
-2018-06-16T08:22:48.607702+00:00 app[web.1]: 2018-06-16 08:22:48.607 DEBUG 4 --- [           main] org.hibernate.SQL                        : create table seat (id  bigserial not null, available boolean, name varchar(255), user_name varchar(255), section_id int8, primary key (id))
-2018-06-16T08:22:48.608167+00:00 app[web.1]: Hibernate: create table seat (id  bigserial not null, available boolean, name varchar(255), user_name varchar(255), section_id int8, primary key (id))
-2018-06-16T08:22:48.621995+00:00 app[web.1]: 2018-06-16 08:22:48.621 DEBUG 4 --- [           main] org.hibernate.SQL                        : create table section (id  bigserial not null, layout_info varchar(255), name varchar(255), primary key (id))
-2018-06-16T08:22:48.624901+00:00 app[web.1]: Hibernate: create table section (id  bigserial not null, layout_info varchar(255), name varchar(255), primary key (id))
-2018-06-16T08:22:48.637490+00:00 app[web.1]: 2018-06-16 08:22:48.637 DEBUG 4 --- [           main] org.hibernate.SQL                        : create table users (id  bigserial not null, country varchar(255), created_at timestamp, email varchar(255), enable boolean, first_name varchar(255), last_name varchar(255), location varchar(255), password varchar(255), password_confirm varchar(255), state varchar(255), updated_at timestamp, user_name varchar(255), primary key (id))
-2018-06-16T08:22:48.638053+00:00 app[web.1]: Hibernate: create table users (id  bigserial not null, country varchar(255), created_at timestamp, email varchar(255), enable boolean, first_name varchar(255), last_name varchar(255), location varchar(255), password varchar(255), password_confirm varchar(255), state varchar(255), updated_at timestamp, user_name varchar(255), primary key (id))
-2018-06-16T08:22:48.649890+00:00 app[web.1]: 2018-06-16 08:22:48.649 DEBUG 4 --- [           main] org.hibernate.SQL                        : create table users_roles (user_id int8 not null, role_id int8 not null)
-2018-06-16T08:22:48.650132+00:00 app[web.1]: Hibernate: create table users_roles (user_id int8 not null, role_id int8 not null)
-2018-06-16T08:22:48.662106+00:00 app[web.1]: 2018-06-16 08:22:48.661 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table seat add constraint FKhxi4f44gv7s6u5a90ehw1g0x3 foreign key (section_id) references section
-2018-06-16T08:22:48.662220+00:00 app[web.1]: Hibernate: alter table seat add constraint FKhxi4f44gv7s6u5a90ehw1g0x3 foreign key (section_id) references section
-2018-06-16T08:22:48.666730+00:00 app[web.1]: 2018-06-16 08:22:48.666 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table users_roles add constraint FKj6m8fwv7oqv74fcehir1a9ffy foreign key (role_id) references roles
-2018-06-16T08:22:48.667223+00:00 app[web.1]: Hibernate: alter table users_roles add constraint FKj6m8fwv7oqv74fcehir1a9ffy foreign key (role_id) references roles
-2018-06-16T08:22:48.670665+00:00 app[web.1]: 2018-06-16 08:22:48.670 DEBUG 4 --- [           main] org.hibernate.SQL                        : alter table users_roles add constraint FK2o0jvgh89lemvvo17cbqvdxaa foreign key (user_id) references users
-2018-06-16T08:22:48.670838+00:00 app[web.1]: Hibernate: alter table users_roles add constraint FK2o0jvgh89lemvvo17cbqvdxaa foreign key (user_id) references users
-2018-06-16T08:22:48.679523+00:00 app[web.1]: 2018-06-16 08:22:48.679  INFO 4 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@302c971f'
-2018-06-16T08:22:48.684048+00:00 app[web.1]: 2018-06-16 08:22:48.683  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-06-16T08:22:50.121226+00:00 app[web.1]: 2018-06-16 08:22:50.120  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'bCryptPasswordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2018-06-16T08:22:50.128772+00:00 app[web.1]: 2018-06-16 08:22:50.128  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-06-16T08:22:50.131241+00:00 app[web.1]: 2018-06-16 08:22:50.131  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2018-06-16T08:22:50.200316+00:00 app[web.1]: 2018-06-16 08:22:50.200  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2018-06-16T08:22:50.204662+00:00 app[web.1]: 2018-06-16 08:22:50.204  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-06-16T08:22:50.235781+00:00 app[web.1]: 2018-06-16 08:22:50.235 DEBUG 4 --- [           main] .c.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: [jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-data-jpa-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-autoconfigure-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-logging-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-classic-1.2.3.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/logback-core-1.2.3.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-to-slf4j-2.10.0.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/log4j-api-2.10.0.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jul-to-slf4j-1.7.25.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/snakeyaml-1.19.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-aop-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/aspectjweaver-1.8.13.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-jdbc-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/HikariCP-2.7.8.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-jdbc-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/hibernate-core-5.2.16.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jboss-logging-3.3.2.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/javassist-3.22.0-GA.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/antlr-2.7.7.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jandex-2.0.3.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/classmate-1.3.4.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/dom4j-1.6.1.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/javax.transaction-api-1.2.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-data-jpa-2.0.6.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-data-commons-2.0.6.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-orm-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-context-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-tx-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-beans-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/slf4j-api-1.7.25.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-aspects-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-web-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-json-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-databind-2.9.5.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-annotations-2.9.0.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-core-2.9.5.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-datatype-jdk8-2.9.5.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-datatype-jsr310-2.9.5.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jackson-module-parameter-names-2.9.5.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/hibernate-validator-6.0.9.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/validation-api-2.0.1.Final.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-web-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-webmvc-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-expression-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-security-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-aop-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-security-config-5.0.4.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-security-core-5.0.4.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-security-web-5.0.4.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/junit-4.12.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/hamcrest-core-1.3.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-core-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-jcl-5.0.5.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/json-simple-1.1.1.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/jstl-1.2.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-embed-jasper-8.5.29.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-embed-core-8.5.29.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-annotations-api-8.5.29.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-embed-el-8.5.29.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/ecj-3.12.3.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/spring-boot-starter-tomcat-2.0.1.RELEASE.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/javax.annotation-api-1.3.2.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-embed-websocket-8.5.29.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/lombok-1.16.18.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/mail-1.5.0-b01.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/activation-1.1.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/postgresql-42.2.1.jar!/, jar:file:/app/target/seat-booking-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/flyway-core-5.0.7.jar!/]
-2018-06-16T08:22:50.440436+00:00 app[web.1]: 2018-06-16 08:22:50.439 DEBUG 4 --- [           main] ConditionEvaluationReportLoggingListener :
-2018-06-16T08:22:50.440449+00:00 app[web.1]: 
-2018-06-16T08:22:50.440450+00:00 app[web.1]: 
-2018-06-16T08:22:50.440453+00:00 app[web.1]: ============================
-2018-06-16T08:22:50.440454+00:00 app[web.1]: CONDITIONS EVALUATION REPORT
-2018-06-16T08:22:50.440457+00:00 app[web.1]: 
-2018-06-16T08:22:50.440458+00:00 app[web.1]: 
-2018-06-16T08:22:50.440456+00:00 app[web.1]: ============================
-2018-06-16T08:22:50.440460+00:00 app[web.1]: Positive matches:
-2018-06-16T08:22:50.440461+00:00 app[web.1]: -----------------
-2018-06-16T08:22:50.440463+00:00 app[web.1]: 
-2018-06-16T08:22:50.440465+00:00 app[web.1]: AopAutoConfiguration matched:
-2018-06-16T08:22:50.440470+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.springframework.context.annotation.EnableAspectJAutoProxy', 'org.aspectj.lang.annotation.Aspect', 'org.aspectj.lang.reflect.Advice', 'org.aspectj.weaver.AnnotatedElement'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440472+00:00 app[web.1]: - @ConditionalOnProperty (spring.aop.auto=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440473+00:00 app[web.1]: 
-2018-06-16T08:22:50.440477+00:00 app[web.1]: - @ConditionalOnProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440478+00:00 app[web.1]: 
-2018-06-16T08:22:50.440475+00:00 app[web.1]: AopAutoConfiguration.CglibAutoProxyConfiguration matched:
-2018-06-16T08:22:50.440480+00:00 app[web.1]: CodecsAutoConfiguration matched:
-2018-06-16T08:22:50.440482+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.codec.CodecConfigurer'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440484+00:00 app[web.1]: 
-2018-06-16T08:22:50.440485+00:00 app[web.1]: CodecsAutoConfiguration.JacksonCodecConfiguration matched:
-2018-06-16T08:22:50.440489+00:00 app[web.1]: 
-2018-06-16T08:22:50.440487+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440490+00:00 app[web.1]: CodecsAutoConfiguration.JacksonCodecConfiguration#jacksonCodecCustomizer matched:
-2018-06-16T08:22:50.440494+00:00 app[web.1]: 
-2018-06-16T08:22:50.440495+00:00 app[web.1]: DataSourceAutoConfiguration matched:
-2018-06-16T08:22:50.440492+00:00 app[web.1]: - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
-2018-06-16T08:22:50.440497+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440499+00:00 app[web.1]: 
-2018-06-16T08:22:50.440500+00:00 app[web.1]: DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
-2018-06-16T08:22:50.440507+00:00 app[web.1]: - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
-2018-06-16T08:22:50.440511+00:00 app[web.1]: 
-2018-06-16T08:22:50.440509+00:00 app[web.1]: - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440512+00:00 app[web.1]: DataSourceConfiguration.Hikari matched:
-2018-06-16T08:22:50.440516+00:00 app[web.1]: - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440517+00:00 app[web.1]: 
-2018-06-16T08:22:50.440519+00:00 app[web.1]: DataSourceJmxConfiguration matched:
-2018-06-16T08:22:50.440520+00:00 app[web.1]: - @ConditionalOnProperty (spring.jmx.enabled=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440514+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440522+00:00 app[web.1]: 
-2018-06-16T08:22:50.440523+00:00 app[web.1]: DataSourceJmxConfiguration.Hikari matched:
-2018-06-16T08:22:50.440527+00:00 app[web.1]: - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
-2018-06-16T08:22:50.440525+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440528+00:00 app[web.1]: 
-2018-06-16T08:22:50.440532+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440530+00:00 app[web.1]: DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
-2018-06-16T08:22:50.440533+00:00 app[web.1]: 
-2018-06-16T08:22:50.440535+00:00 app[web.1]: DataSourceTransactionManagerAutoConfiguration matched:
-2018-06-16T08:22:50.440537+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.PlatformTransactionManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440538+00:00 app[web.1]: 
-2018-06-16T08:22:50.440540+00:00 app[web.1]: DataSourceTransactionManagerAutoConfiguration.DataSourceTransactionManagerConfiguration matched:
-2018-06-16T08:22:50.440542+00:00 app[web.1]: - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
-2018-06-16T08:22:50.440543+00:00 app[web.1]: 
-2018-06-16T08:22:50.440545+00:00 app[web.1]: DispatcherServletAutoConfiguration matched:
-2018-06-16T08:22:50.440557+00:00 app[web.1]: - found ConfigurableWebEnvironment (OnWebApplicationCondition)
-2018-06-16T08:22:50.440558+00:00 app[web.1]: 
-2018-06-16T08:22:50.440560+00:00 app[web.1]: DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
-2018-06-16T08:22:50.440555+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440562+00:00 app[web.1]: - @ConditionalOnClass found required class 'javax.servlet.ServletRegistration'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440564+00:00 app[web.1]: - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
-2018-06-16T08:22:50.440565+00:00 app[web.1]: 
-2018-06-16T08:22:50.440567+00:00 app[web.1]: DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
-2018-06-16T08:22:50.440568+00:00 app[web.1]: - @ConditionalOnClass found required class 'javax.servlet.ServletRegistration'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440570+00:00 app[web.1]: - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
-2018-06-16T08:22:50.440573+00:00 app[web.1]: DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
-2018-06-16T08:22:50.440576+00:00 app[web.1]: - @ConditionalOnBean (names: dispatcherServlet; types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet' (OnBeanCondition)
-2018-06-16T08:22:50.440572+00:00 app[web.1]: 
-2018-06-16T08:22:50.440577+00:00 app[web.1]: 
-2018-06-16T08:22:50.440579+00:00 app[web.1]: EmbeddedWebServerFactoryCustomizerAutoConfiguration.TomcatWebServerFactoryCustomizerConfiguration matched:
-2018-06-16T08:22:50.440581+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440583+00:00 app[web.1]: 
-2018-06-16T08:22:50.440584+00:00 app[web.1]: ErrorMvcAutoConfiguration matched:
-2018-06-16T08:22:50.440586+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440587+00:00 app[web.1]: - found ConfigurableWebEnvironment (OnWebApplicationCondition)
-2018-06-16T08:22:50.440591+00:00 app[web.1]: ErrorMvcAutoConfiguration#basicErrorController matched:
-2018-06-16T08:22:50.440592+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440589+00:00 app[web.1]: 
-2018-06-16T08:22:50.440594+00:00 app[web.1]: 
-2018-06-16T08:22:50.440595+00:00 app[web.1]: ErrorMvcAutoConfiguration#errorAttributes matched:
-2018-06-16T08:22:50.440597+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440599+00:00 app[web.1]: 
-2018-06-16T08:22:50.440600+00:00 app[web.1]: ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
-2018-06-16T08:22:50.440602+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.error.DefaultErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440603+00:00 app[web.1]: 
-2018-06-16T08:22:50.440607+00:00 app[web.1]: - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440609+00:00 app[web.1]: - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
-2018-06-16T08:22:50.440605+00:00 app[web.1]: ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
-2018-06-16T08:22:50.440610+00:00 app[web.1]: 
-2018-06-16T08:22:50.440612+00:00 app[web.1]: ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
-2018-06-16T08:22:50.440613+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440615+00:00 app[web.1]: 
-2018-06-16T08:22:50.440616+00:00 app[web.1]: ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
-2018-06-16T08:22:50.440618+00:00 app[web.1]: - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440619+00:00 app[web.1]: 
-2018-06-16T08:22:50.440623+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.flywaydb.core.Flyway'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440624+00:00 app[web.1]: - @ConditionalOnProperty (spring.flyway.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440626+00:00 app[web.1]: - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource' (OnBeanCondition)
-2018-06-16T08:22:50.440621+00:00 app[web.1]: FlywayAutoConfiguration matched:
-2018-06-16T08:22:50.440627+00:00 app[web.1]: 
-2018-06-16T08:22:50.440629+00:00 app[web.1]: FlywayAutoConfiguration.FlywayConfiguration matched:
-2018-06-16T08:22:50.440636+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.flywaydb.core.Flyway; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440638+00:00 app[web.1]: 
-2018-06-16T08:22:50.440640+00:00 app[web.1]: FlywayAutoConfiguration.FlywayConfiguration#flywayInitializer matched:
-2018-06-16T08:22:50.440641+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440645+00:00 app[web.1]: FlywayAutoConfiguration.FlywayConfiguration.FlywayInitializerJpaDependencyConfiguration matched:
-2018-06-16T08:22:50.440647+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440643+00:00 app[web.1]: 
-2018-06-16T08:22:50.440649+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.orm.jpa.AbstractEntityManagerFactoryBean; SearchStrategy: all) found bean '&entityManagerFactory' (OnBeanCondition)
-2018-06-16T08:22:50.440650+00:00 app[web.1]: 
-2018-06-16T08:22:50.440652+00:00 app[web.1]: FlywayAutoConfiguration.FlywayJpaDependencyConfiguration matched:
-2018-06-16T08:22:50.440653+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440655+00:00 app[web.1]: - @ConditionalOnBean (types: org.springframework.orm.jpa.AbstractEntityManagerFactoryBean; SearchStrategy: all) found bean '&entityManagerFactory' (OnBeanCondition)
-2018-06-16T08:22:50.440656+00:00 app[web.1]: 
-2018-06-16T08:22:50.440658+00:00 app[web.1]: GenericCacheConfiguration matched:
-2018-06-16T08:22:50.440661+00:00 app[web.1]: 
-2018-06-16T08:22:50.440663+00:00 app[web.1]: HibernateJpaAutoConfiguration matched:
-2018-06-16T08:22:50.440665+00:00 app[web.1]: - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'javax.persistence.EntityManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440660+00:00 app[web.1]: - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration automatic cache type (CacheCondition)
-2018-06-16T08:22:50.440667+00:00 app[web.1]: - HibernateEntityManager found class 'org.hibernate.ejb.HibernateEntityManager' (HibernateJpaAutoConfiguration.HibernateEntityManagerCondition)
-2018-06-16T08:22:50.440668+00:00 app[web.1]: 
-2018-06-16T08:22:50.440670+00:00 app[web.1]: HibernateJpaConfiguration matched:
-2018-06-16T08:22:50.440671+00:00 app[web.1]: - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
-2018-06-16T08:22:50.440672+00:00 app[web.1]: 
-2018-06-16T08:22:50.440674+00:00 app[web.1]: HttpEncodingAutoConfiguration matched:
-2018-06-16T08:22:50.440678+00:00 app[web.1]: - found ConfigurableWebEnvironment (OnWebApplicationCondition)
-2018-06-16T08:22:50.440679+00:00 app[web.1]: - @ConditionalOnProperty (spring.http.encoding.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440681+00:00 app[web.1]: 
-2018-06-16T08:22:50.440676+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440682+00:00 app[web.1]: HttpEncodingAutoConfiguration#characterEncodingFilter matched:
-2018-06-16T08:22:50.440684+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440686+00:00 app[web.1]: 
-2018-06-16T08:22:50.440687+00:00 app[web.1]: HttpMessageConvertersAutoConfiguration matched:
-2018-06-16T08:22:50.440689+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440691+00:00 app[web.1]: 
-2018-06-16T08:22:50.440694+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440695+00:00 app[web.1]: 
-2018-06-16T08:22:50.440692+00:00 app[web.1]: HttpMessageConvertersAutoConfiguration#messageConverters matched:
-2018-06-16T08:22:50.440697+00:00 app[web.1]: HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
-2018-06-16T08:22:50.440698+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440700+00:00 app[web.1]: 
-2018-06-16T08:22:50.440701+00:00 app[web.1]: HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
-2018-06-16T08:22:50.440703+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440705+00:00 app[web.1]: 
-2018-06-16T08:22:50.440706+00:00 app[web.1]: JacksonAutoConfiguration matched:
-2018-06-16T08:22:50.440709+00:00 app[web.1]: 
-2018-06-16T08:22:50.440711+00:00 app[web.1]: JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
-2018-06-16T08:22:50.440717+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440718+00:00 app[web.1]: 
-2018-06-16T08:22:50.440720+00:00 app[web.1]: JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
-2018-06-16T08:22:50.440722+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440708+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440723+00:00 app[web.1]: 
-2018-06-16T08:22:50.440725+00:00 app[web.1]: JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
-2018-06-16T08:22:50.440726+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440728+00:00 app[web.1]: 
-2018-06-16T08:22:50.440729+00:00 app[web.1]: JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
-2018-06-16T08:22:50.440733+00:00 app[web.1]: 
-2018-06-16T08:22:50.440734+00:00 app[web.1]: JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
-2018-06-16T08:22:50.440736+00:00 app[web.1]: - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440738+00:00 app[web.1]: 
-2018-06-16T08:22:50.440731+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440739+00:00 app[web.1]: JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
-2018-06-16T08:22:50.440741+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440742+00:00 app[web.1]: 
-2018-06-16T08:22:50.440744+00:00 app[web.1]: JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
-2018-06-16T08:22:50.440746+00:00 app[web.1]: - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440747+00:00 app[web.1]: 
-2018-06-16T08:22:50.440749+00:00 app[web.1]: JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
-2018-06-16T08:22:50.440750+00:00 app[web.1]: - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440754+00:00 app[web.1]: - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
-2018-06-16T08:22:50.440752+00:00 app[web.1]: - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440755+00:00 app[web.1]: 
-2018-06-16T08:22:50.440757+00:00 app[web.1]: JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
-2018-06-16T08:22:50.440759+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440760+00:00 app[web.1]: 
-2018-06-16T08:22:50.440762+00:00 app[web.1]: JdbcTemplateAutoConfiguration matched:
-2018-06-16T08:22:50.440765+00:00 app[web.1]: - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a primary bean from beans 'dataSource' (OnBeanCondition)
-2018-06-16T08:22:50.440767+00:00 app[web.1]: 
-2018-06-16T08:22:50.440764+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440792+00:00 app[web.1]: JdbcTemplateAutoConfiguration.JdbcTemplateConfiguration#jdbcTemplate matched:
-2018-06-16T08:22:50.440795+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440797+00:00 app[web.1]: 
-2018-06-16T08:22:50.440798+00:00 app[web.1]: JdbcTemplateAutoConfiguration.NamedParameterJdbcTemplateConfiguration#namedParameterJdbcTemplate matched:
-2018-06-16T08:22:50.440801+00:00 app[web.1]: - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a primary bean from beans 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440803+00:00 app[web.1]: 
-2018-06-16T08:22:50.440804+00:00 app[web.1]: JmxAutoConfiguration matched:
-2018-06-16T08:22:50.440808+00:00 app[web.1]: - @ConditionalOnProperty (spring.jmx.enabled=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440809+00:00 app[web.1]: 
-2018-06-16T08:22:50.440806+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440811+00:00 app[web.1]: JmxAutoConfiguration#mbeanExporter matched:
-2018-06-16T08:22:50.440819+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440820+00:00 app[web.1]: 
-2018-06-16T08:22:50.440822+00:00 app[web.1]: JmxAutoConfiguration#mbeanServer matched:
-2018-06-16T08:22:50.440824+00:00 app[web.1]: - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440825+00:00 app[web.1]: 
-2018-06-16T08:22:50.440827+00:00 app[web.1]: JmxAutoConfiguration#objectNamingStrategy matched:
-2018-06-16T08:22:50.440830+00:00 app[web.1]: 
-2018-06-16T08:22:50.440831+00:00 app[web.1]: JpaBaseConfiguration#entityManagerFactory matched:
-2018-06-16T08:22:50.440833+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,javax.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440835+00:00 app[web.1]: 
-2018-06-16T08:22:50.440828+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: current) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440836+00:00 app[web.1]: JpaBaseConfiguration#entityManagerFactoryBuilder matched:
-2018-06-16T08:22:50.440838+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440839+00:00 app[web.1]: 
-2018-06-16T08:22:50.440841+00:00 app[web.1]: JpaBaseConfiguration#jpaVendorAdapter matched:
-2018-06-16T08:22:50.440843+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440846+00:00 app[web.1]: JpaBaseConfiguration#transactionManager matched:
-2018-06-16T08:22:50.440848+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440849+00:00 app[web.1]: 
-2018-06-16T08:22:50.440844+00:00 app[web.1]: 
-2018-06-16T08:22:50.440851+00:00 app[web.1]: JpaBaseConfiguration.JpaWebConfiguration matched:
-2018-06-16T08:22:50.440852+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440854+00:00 app[web.1]: - found ConfigurableWebEnvironment (OnWebApplicationCondition)
-2018-06-16T08:22:50.440856+00:00 app[web.1]: - @ConditionalOnProperty (spring.jpa.open-in-view=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440859+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor,org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440860+00:00 app[web.1]: 
-2018-06-16T08:22:50.440864+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440865+00:00 app[web.1]: - @ConditionalOnProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440867+00:00 app[web.1]: - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440869+00:00 app[web.1]: 
-2018-06-16T08:22:50.440862+00:00 app[web.1]: JpaRepositoriesAutoConfiguration matched:
-2018-06-16T08:22:50.440870+00:00 app[web.1]: JtaAutoConfiguration matched:
-2018-06-16T08:22:50.440872+00:00 app[web.1]: - @ConditionalOnClass found required class 'javax.transaction.Transaction'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440873+00:00 app[web.1]: - @ConditionalOnProperty (spring.jta.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440875+00:00 app[web.1]: 
-2018-06-16T08:22:50.440876+00:00 app[web.1]: MultipartAutoConfiguration matched:
-2018-06-16T08:22:50.440884+00:00 app[web.1]: - found ConfigurableWebEnvironment (OnWebApplicationCondition)
-2018-06-16T08:22:50.440885+00:00 app[web.1]: - @ConditionalOnProperty (spring.servlet.multipart.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440887+00:00 app[web.1]: 
-2018-06-16T08:22:50.440882+00:00 app[web.1]: - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'javax.servlet.MultipartConfigElement'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440888+00:00 app[web.1]: MultipartAutoConfiguration#multipartConfigElement matched:
-2018-06-16T08:22:50.440890+00:00 app[web.1]: - @ConditionalOnMissingBean (types: javax.servlet.MultipartConfigElement; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440891+00:00 app[web.1]: 
-2018-06-16T08:22:50.440893+00:00 app[web.1]: MultipartAutoConfiguration#multipartResolver matched:
-2018-06-16T08:22:50.440895+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440896+00:00 app[web.1]: 
-2018-06-16T08:22:50.440898+00:00 app[web.1]: NoOpCacheConfiguration matched:
-2018-06-16T08:22:50.440906+00:00 app[web.1]: 
-2018-06-16T08:22:50.440908+00:00 app[web.1]: PersistenceExceptionTranslationAutoConfiguration matched:
-2018-06-16T08:22:50.440905+00:00 app[web.1]: - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration automatic cache type (CacheCondition)
-2018-06-16T08:22:50.440910+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440911+00:00 app[web.1]: 
-2018-06-16T08:22:50.440913+00:00 app[web.1]: PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
-2018-06-16T08:22:50.440915+00:00 app[web.1]: - @ConditionalOnProperty (spring.dao.exceptiontranslation.enabled) matched (OnPropertyCondition)
-2018-06-16T08:22:50.440916+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440918+00:00 app[web.1]: 
-2018-06-16T08:22:50.440920+00:00 app[web.1]: PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
-2018-06-16T08:22:50.440923+00:00 app[web.1]: 
-2018-06-16T08:22:50.440921+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440924+00:00 app[web.1]: RedisCacheConfiguration matched:
-2018-06-16T08:22:50.440926+00:00 app[web.1]: - Cache org.springframework.boot.autoconfigure.cache.RedisCacheConfiguration automatic cache type (CacheCondition)
-2018-06-16T08:22:50.440927+00:00 app[web.1]: 
-2018-06-16T08:22:50.440929+00:00 app[web.1]: RestTemplateAutoConfiguration matched:
-2018-06-16T08:22:50.440931+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.web.client.RestTemplate'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
-2018-06-16T08:22:50.440932+00:00 app[web.1]: 
-2018-06-16T08:22:50.440934+00:00 app[web.1]: RestTemplateAutoConfiguration#restTemplateBuilder matched:
-2018-06-16T08:22:50.440936+00:00 app[web.1]: - @ConditionalOnMissingBean (types: org.springframework.boot.web.client.RestTemplateBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
-2018-06-16T08:22:50.440939+00:00 app[web.1]: SecurityAutoConfiguration matched:
 2018-06-16T08:22:50.440942+00:00 app[web.1]: 
 2018-06-16T08:22:50.440937+00:00 app[web.1]: 
 2018-06-16T08:22:50.440940+00:00 app[web.1]: - @ConditionalOnClass found required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
@@ -1498,3 +1153,348 @@
 2018-06-16T13:14:47.845779+00:00 heroku[web.1]: State changed from starting to crashed
 2018-06-16T13:14:47.792888+00:00 heroku[web.1]: Process exited with status 1
 2018-06-16T13:14:55.199807+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=bojja-seating-app.herokuapp.com request_id=5cad0459-ba73-4a0e-9c47-82050d4f2bf5 fwd="27.59.174.122" dyno= connect= service= status=503 bytes= protocol=https
+2018-06-16T13:17:40.000000+00:00 app[api]: Build started by user bojja.s@hcl.com
+2018-06-16T13:18:07.898935+00:00 heroku[web.1]: State changed from crashed to starting
+2018-06-16T13:18:07.682901+00:00 app[api]: Release v51 created by user bojja.s@hcl.com
+2018-06-16T13:18:07.682901+00:00 app[api]: Deploy c05ad1ef by user bojja.s@hcl.com
+2018-06-16T13:18:07.000000+00:00 app[api]: Build succeeded
+2018-06-16T13:18:11.647881+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=10706 $JAVA_OPTS -jar target/seat-booking-0.0.1-SNAPSHOT.jar`
+2018-06-16T13:18:13.368881+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2018-06-16T13:18:13.427019+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-06-16T13:18:13.430979+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8
+2018-06-16T13:18:16.044932+00:00 app[web.1]: 
+2018-06-16T13:18:16.044987+00:00 app[web.1]: .   ____          _            __ _ _
+2018-06-16T13:18:16.045082+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-06-16T13:18:16.045177+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-06-16T13:18:16.045267+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-06-16T13:18:16.045353+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-06-16T13:18:16.045440+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2018-06-16T13:18:16.058058+00:00 app[web.1]: :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-06-16T13:18:16.058163+00:00 app[web.1]: 
+2018-06-16T13:18:16.454615+00:00 app[web.1]: 2018-06-16 13:18:16.425  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : Starting WebApplication v0.0.1-SNAPSHOT on c4991ad8-eaae-49b8-b81d-e378a7903f25 with PID 4 (/app/target/seat-booking-0.0.1-SNAPSHOT.jar started by u10086 in /app)
+2018-06-16T13:18:16.488615+00:00 app[web.1]: 2018-06-16 13:18:16.488  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : No active profile set, falling back to default profiles: default
+2018-06-16T13:18:16.899917+00:00 app[web.1]: 2018-06-16 13:18:16.899  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3a4afd8d: startup date [Sat Jun 16 13:18:16 UTC 2018]; root of context hierarchy
+2018-06-16T13:18:18.301753+00:00 app[web.1]: 2018-06-16 13:18:18.301  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]]
+2018-06-16T13:18:18.303383+00:00 app[web.1]: 2018-06-16 13:18:18.303  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userController; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/controller/UserController.class]]
+2018-06-16T13:18:19.669748+00:00 app[web.1]: 2018-06-16 13:18:19.669  INFO 4 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a158d391] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-16T13:18:20.329032+00:00 app[web.1]: 2018-06-16 13:18:20.328  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10706 (http)
+2018-06-16T13:18:20.373275+00:00 app[web.1]: 2018-06-16 13:18:20.373  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-16T13:18:20.373582+00:00 app[web.1]: 2018-06-16 13:18:20.373  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-16T13:18:20.395445+00:00 app[web.1]: 2018-06-16 13:18:20.394  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-06-16T13:18:21.162102+00:00 app[web.1]: 2018-06-16 13:18:21.161  INFO 4 --- [ost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-06-16T13:18:21.454904+00:00 app[web.1]: 2018-06-16 13:18:21.454  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-16T13:18:21.455055+00:00 app[web.1]: 2018-06-16 13:18:21.454  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4560 ms
+2018-06-16T13:18:21.772479+00:00 app[web.1]: 2018-06-16 13:18:21.772  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-16T13:18:21.772959+00:00 app[web.1]: 2018-06-16 13:18:21.772  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-16T13:18:21.773161+00:00 app[web.1]: 2018-06-16 13:18:21.773  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-16T13:18:21.773274+00:00 app[web.1]: 2018-06-16 13:18:21.773  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-16T13:18:21.773818+00:00 app[web.1]: 2018-06-16 13:18:21.773  INFO 4 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-06-16T13:18:21.774078+00:00 app[web.1]: 2018-06-16 13:18:21.773  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-06-16T13:18:22.287984+00:00 app[web.1]: 2018-06-16 13:18:22.287  INFO 4 --- [           main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2018-06-16T13:18:22.306194+00:00 app[web.1]: 2018-06-16 13:18:22.304  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-06-16T13:18:22.820839+00:00 app[web.1]: 2018-06-16 13:18:22.820  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-06-16T13:18:22.831649+00:00 app[web.1]: 2018-06-16 13:18:22.831  INFO 4 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://ec2-23-21-238-28.compute-1.amazonaws.com:5432/d798ju9hj2tj13 (PostgreSQL 10.4)
+2018-06-16T13:18:22.933493+00:00 app[web.1]: 2018-06-16 13:18:22.933  INFO 4 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.039s)
+2018-06-16T13:18:22.986019+00:00 app[web.1]: 2018-06-16 13:18:22.985  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 6
+2018-06-16T13:18:22.987741+00:00 app[web.1]: 2018-06-16 13:18:22.987  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2018-06-16T13:18:23.222126+00:00 app[web.1]: 2018-06-16 13:18:23.221  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:23.250018+00:00 app[web.1]: 2018-06-16 13:18:23.249  INFO 4 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-16T13:18:23.250022+00:00 app[web.1]: name: default
+2018-06-16T13:18:23.250024+00:00 app[web.1]: ...]
+2018-06-16T13:18:23.406871+00:00 app[web.1]: 2018-06-16 13:18:23.405  INFO 4 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-06-16T13:18:23.403634+00:00 app[web.1]: 2018-06-16 13:18:23.403  INFO 4 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-06-16T13:18:23.475920+00:00 app[web.1]: 2018-06-16 13:18:23.475  INFO 4 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-06-16T13:18:23.781281+00:00 app[web.1]: 2018-06-16 13:18:23.781  INFO 4 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2018-06-16T13:18:23.811142+00:00 app[web.1]: 2018-06-16 13:18:23.810  INFO 4 --- [           main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3514a4c0
+2018-06-16T13:18:23.809062+00:00 app[web.1]: 2018-06-16 13:18:23.808  INFO 4 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-06-16T13:18:24.688370+00:00 app[web.1]: 2018-06-16 13:18:24.688  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:25.912709+00:00 app[web.1]: 2018-06-16 13:18:25.912  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'bCryptPasswordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-16T13:18:25.914309+00:00 app[web.1]: 2018-06-16 13:18:25.914  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:25.916187+00:00 app[web.1]: 2018-06-16 13:18:25.916  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-06-16T13:18:25.972943+00:00 app[web.1]: 2018-06-16 13:18:25.972  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-06-16T13:18:26.036799+00:00 app[web.1]: 
+2018-06-16T13:18:26.036796+00:00 app[web.1]: 2018-06-16 13:18:26.036  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener :
+2018-06-16T13:18:25.976463+00:00 app[web.1]: 2018-06-16 13:18:25.976  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-16T13:18:26.036802+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-06-16T13:18:26.269608+00:00 app[web.1]: 2018-06-16 13:18:26.269 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
+2018-06-16T13:18:26.269622+00:00 app[web.1]: 
+2018-06-16T13:18:26.269624+00:00 app[web.1]: ***************************
+2018-06-16T13:18:26.269626+00:00 app[web.1]: APPLICATION FAILED TO START
+2018-06-16T13:18:26.269629+00:00 app[web.1]: ***************************
+2018-06-16T13:18:26.269630+00:00 app[web.1]: 
+2018-06-16T13:18:26.269632+00:00 app[web.1]: Description:
+2018-06-16T13:18:26.269633+00:00 app[web.1]: 
+2018-06-16T13:18:26.269636+00:00 app[web.1]: Field bCryptPasswordEncoder in com.hcl.bootcamp.fs.springboot.app.service.UserServiceImpl required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+2018-06-16T13:18:26.269637+00:00 app[web.1]: 
+2018-06-16T13:18:26.269639+00:00 app[web.1]: 
+2018-06-16T13:18:26.269641+00:00 app[web.1]: Action:
+2018-06-16T13:18:26.269642+00:00 app[web.1]: 
+2018-06-16T13:18:26.269644+00:00 app[web.1]: Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+2018-06-16T13:18:26.269646+00:00 app[web.1]: 
+2018-06-16T13:18:26.394868+00:00 heroku[web.1]: Process exited with status 1
+2018-06-16T13:18:26.412662+00:00 heroku[web.1]: State changed from starting to crashed
+2018-06-16T13:18:26.416570+00:00 heroku[web.1]: State changed from crashed to starting
+2018-06-16T13:18:30.739128+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=48623 $JAVA_OPTS -jar target/seat-booking-0.0.1-SNAPSHOT.jar`
+2018-06-16T13:18:33.839142+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2018-06-16T13:18:33.916554+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-06-16T13:18:33.922040+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8
+2018-06-16T13:18:37.462847+00:00 app[web.1]: 
+2018-06-16T13:18:37.462891+00:00 app[web.1]: .   ____          _            __ _ _
+2018-06-16T13:18:37.463033+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-06-16T13:18:37.463142+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-06-16T13:18:37.463236+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-06-16T13:18:37.463336+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-06-16T13:18:37.463428+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2018-06-16T13:18:37.465343+00:00 app[web.1]: :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-06-16T13:18:37.465422+00:00 app[web.1]: 
+2018-06-16T13:18:38.065651+00:00 app[web.1]: 2018-06-16 13:18:38.005  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : Starting WebApplication v0.0.1-SNAPSHOT on 7be9e74a-e061-4cb5-9563-4d269d240e27 with PID 4 (/app/target/seat-booking-0.0.1-SNAPSHOT.jar started by u53505 in /app)
+2018-06-16T13:18:38.072385+00:00 app[web.1]: 2018-06-16 13:18:38.071  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : No active profile set, falling back to default profiles: default
+2018-06-16T13:18:38.616094+00:00 app[web.1]: 2018-06-16 13:18:38.615  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16b4a017: startup date [Sat Jun 16 13:18:38 UTC 2018]; root of context hierarchy
+2018-06-16T13:18:43.481895+00:00 app[web.1]: 2018-06-16 13:18:43.481  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]]
+2018-06-16T13:18:43.484400+00:00 app[web.1]: 2018-06-16 13:18:43.484  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userController; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/controller/UserController.class]]
+2018-06-16T13:18:46.611209+00:00 app[web.1]: 2018-06-16 13:18:46.610  INFO 4 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$29df9638] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-16T13:18:48.321854+00:00 app[web.1]: 2018-06-16 13:18:48.321  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 48623 (http)
+2018-06-16T13:18:48.406711+00:00 app[web.1]: 2018-06-16 13:18:48.406  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-16T13:18:48.407305+00:00 app[web.1]: 2018-06-16 13:18:48.407  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-16T13:18:48.450519+00:00 app[web.1]: 2018-06-16 13:18:48.450  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-06-16T13:18:49.506356+00:00 app[web.1]: 2018-06-16 13:18:49.506  INFO 4 --- [ost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-06-16T13:18:50.026153+00:00 app[web.1]: 2018-06-16 13:18:50.025  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-16T13:18:50.026457+00:00 app[web.1]: 2018-06-16 13:18:50.026  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 11424 ms
+2018-06-16T13:18:50.995306+00:00 app[web.1]: 2018-06-16 13:18:50.995  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-16T13:18:51.014821+00:00 app[web.1]: 2018-06-16 13:18:51.014  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-16T13:18:51.015017+00:00 app[web.1]: 2018-06-16 13:18:51.014  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-16T13:18:51.016341+00:00 app[web.1]: 2018-06-16 13:18:51.015  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-16T13:18:51.017148+00:00 app[web.1]: 2018-06-16 13:18:51.016  INFO 4 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-06-16T13:18:51.019440+00:00 app[web.1]: 2018-06-16 13:18:51.017  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-06-16T13:18:52.048194+00:00 app[web.1]: 2018-06-16 13:18:52.047  INFO 4 --- [           main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2018-06-16T13:18:52.066776+00:00 app[web.1]: 2018-06-16 13:18:52.064  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-06-16T13:18:52.798264+00:00 app[web.1]: 2018-06-16 13:18:52.797  INFO 4 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://ec2-23-21-238-28.compute-1.amazonaws.com:5432/d798ju9hj2tj13 (PostgreSQL 10.4)
+2018-06-16T13:18:52.781710+00:00 app[web.1]: 2018-06-16 13:18:52.781  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-06-16T13:18:52.966689+00:00 app[web.1]: 2018-06-16 13:18:52.966  INFO 4 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.090s)
+2018-06-16T13:18:53.029730+00:00 app[web.1]: 2018-06-16 13:18:53.024  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 6
+2018-06-16T13:18:53.037382+00:00 app[web.1]: 2018-06-16 13:18:53.037  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2018-06-16T13:18:53.780147+00:00 app[web.1]: 2018-06-16 13:18:53.779  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:53.826938+00:00 app[web.1]: 2018-06-16 13:18:53.826  INFO 4 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-16T13:18:53.826942+00:00 app[web.1]: name: default
+2018-06-16T13:18:53.826944+00:00 app[web.1]: ...]
+2018-06-16T13:18:53.977211+00:00 app[web.1]: 2018-06-16 13:18:53.976  INFO 4 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-06-16T13:18:53.979679+00:00 app[web.1]: 2018-06-16 13:18:53.979  INFO 4 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-06-16T13:18:54.062254+00:00 app[web.1]: 2018-06-16 13:18:54.059  INFO 4 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-06-16T13:18:54.720199+00:00 app[web.1]: 2018-06-16 13:18:54.719  INFO 4 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2018-06-16T13:18:54.766602+00:00 app[web.1]: 2018-06-16 13:18:54.766  INFO 4 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-06-16T13:18:54.770516+00:00 app[web.1]: 2018-06-16 13:18:54.769  INFO 4 --- [           main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@33990a0c
+2018-06-16T13:18:56.476410+00:00 app[web.1]: 2018-06-16 13:18:56.476  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:58.437405+00:00 app[web.1]: 2018-06-16 13:18:58.437  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'bCryptPasswordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-16T13:18:58.441184+00:00 app[web.1]: 2018-06-16 13:18:58.440  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:18:58.445906+00:00 app[web.1]: 2018-06-16 13:18:58.444  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-06-16T13:18:58.532777+00:00 app[web.1]: 2018-06-16 13:18:58.532  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-06-16T13:18:58.543224+00:00 app[web.1]: 2018-06-16 13:18:58.542  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-16T13:18:58.632476+00:00 app[web.1]: 2018-06-16 13:18:58.632  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener :
+2018-06-16T13:18:58.632479+00:00 app[web.1]: 
+2018-06-16T13:18:58.632481+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-06-16T13:18:58.979049+00:00 app[web.1]: 2018-06-16 13:18:58.978 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
+2018-06-16T13:18:58.979067+00:00 app[web.1]: 
+2018-06-16T13:18:58.979069+00:00 app[web.1]: ***************************
+2018-06-16T13:18:58.979071+00:00 app[web.1]: APPLICATION FAILED TO START
+2018-06-16T13:18:58.979073+00:00 app[web.1]: ***************************
+2018-06-16T13:18:58.979075+00:00 app[web.1]: 
+2018-06-16T13:18:58.979076+00:00 app[web.1]: Description:
+2018-06-16T13:18:58.979078+00:00 app[web.1]: 
+2018-06-16T13:18:58.979081+00:00 app[web.1]: Field bCryptPasswordEncoder in com.hcl.bootcamp.fs.springboot.app.service.UserServiceImpl required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+2018-06-16T13:18:58.979082+00:00 app[web.1]: 
+2018-06-16T13:18:58.979083+00:00 app[web.1]: 
+2018-06-16T13:18:58.979085+00:00 app[web.1]: Action:
+2018-06-16T13:18:58.979087+00:00 app[web.1]: 
+2018-06-16T13:18:58.979089+00:00 app[web.1]: Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+2018-06-16T13:18:58.979090+00:00 app[web.1]: 
+2018-06-16T13:18:59.254026+00:00 heroku[web.1]: State changed from starting to crashed
+2018-06-16T13:18:59.233915+00:00 heroku[web.1]: Process exited with status 1
+2018-06-16T13:21:12.296645+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=bojja-seating-app.herokuapp.com request_id=1930d1ed-435c-4c61-ba87-027fbd599179 fwd="27.59.174.122" dyno= connect= service= status=503 bytes= protocol=https
+2018-06-16T13:30:17.506511+00:00 app[api]: Starting process with command `set -e
+2018-06-16T13:30:17.506511+00:00 app[api]: mkdir -p tmp/repo_tmp/unpack
+2018-06-16T13:30:17.506511+00:00 app[api]: cd tmp/repo_tmp
+2018-06-16T13:30:17.506511+00:00 app[api]: curl -o repo-cache.tgz 'https://s3-external-1.amazonaws.com/heroku_repos/heroku.com/cache/99655723.tgz?AWSAccessKeyId=AKIAJQEIEH544PNXTZNQ&Signature=ijxs%2FENybFmvsaAgxrq3rnUEaVY%3D&Expires=1529159414'
+2018-06-16T13:30:17.506511+00:00 app[api]: cd unpack
+2018-06-16T13:30:17.506511+00:00 app[api]: tar -zxf ../repo-cache.tgz
+2018-06-16T13:30:17.506511+00:00 app[api]: METADATA="vendor/heroku"
+2018-06-16T13:30:17.506511+00:00 app[api]: if [ -d "$METADATA" ]; then
+2018-06-16T13:30:17.506511+00:00 app[api]: TMPDIR=`mktemp -d`
+2018-06-16T13:30:17.506511+00:00 app[api]: cp -rf $METADATA $TMPDIR
+2018-06-16T13:30:17.506511+00:00 app[api]: cd ..
+2018-06-16T13:30:17.506511+00:00 app[api]: fi
+2018-06-16T13:30:17.506511+00:00 app[api]: rm -rf unpack
+2018-06-16T13:30:17.506511+00:00 app[api]: mkdir unpack
+2018-06-16T13:30:17.506511+00:00 app[api]: cd unpack
+2018-06-16T13:30:17.506511+00:00 app[api]: TMPDATA="$TMPDIR/heroku"
+2018-06-16T13:30:17.506511+00:00 app[api]: VENDOR="vendor"
+2018-06-16T13:30:17.506511+00:00 app[api]: if [ -d "$TMPDATA" ]; then
+2018-06-16T13:30:17.506511+00:00 app[api]: mkdir $VENDOR
+2018-06-16T13:30:17.506511+00:00 app[api]: cp -rf $TMPDATA $VENDOR
+2018-06-16T13:30:17.506511+00:00 app[api]: rm -rf $TMPDIR
+2018-06-16T13:30:17.506511+00:00 app[api]: fi
+2018-06-16T13:30:17.506511+00:00 app[api]: tar -zcf ../cache-repack.tgz .
+2018-06-16T13:30:17.506511+00:00 app[api]: curl -o /dev/null --upload-file ../cache-repack.tgz 'https://s3-external-1.amazonaws.com/heroku_repos/heroku.com/cache/99655723.tgz?AWSAccessKeyId=AKIAJQEIEH544PNXTZNQ&Signature=jEmUMYl5XRd45k2EfuFIBgfb4cA%3D&Expires=1529159415'
+2018-06-16T13:30:17.506511+00:00 app[api]: exit` by user bojja.s@hcl.com
+2018-06-16T13:30:22.192457+00:00 heroku[run.9332]: Awaiting client
+2018-06-16T13:30:22.244083+00:00 heroku[run.9332]: State changed from starting to up
+2018-06-16T13:30:22.229558+00:00 heroku[run.9332]: Starting process with command `set -e mkdir -p tmp/repo_tmp/unpack cd tmp/repo_tmp curl -o repo-cache.tgz 'https://s3-external-1.amazonaws.com/heroku_repos/heroku.com/cache/99655723.tgz?AWSAccessKeyId=AKIAJQEIEH544PNXTZNQ&Signature=ijxs%2FENybFmvsaAgxrq3rnUEaVY%3D&Expires=1529159414' cd unpack tar -zxf ../repo-cache.tgz METADATA="vendor/heroku" if [ -d "$METADATA" ]; then   TMPDIR=`mktemp -d`   cp -rf $METADATA $TMPDIR fi cd .. rm -rf unpack mkdir unpack cd unpack TMPDATA="$TMPDIR/heroku" VENDOR="vendor" if [ -d "$TMPDATA" ]; then   mkdir $VENDOR   cp -rf $TMPDATA $VENDOR   rm -rf $TMPDIR fi tar -zcf ../cache-repack.tgz . curl -o /dev/null --upload-file ../cache-repack.tgz 'https://s3-external-1.amazonaws.com/heroku_repos/heroku.com/cache/99655723.tgz?AWSAccessKeyId=AKIAJQEIEH544PNXTZNQ&Signature=jEmUMYl5XRd45k2EfuFIBgfb4cA%3D&Expires=1529159415' exit`
+2018-06-16T13:30:36.896677+00:00 heroku[run.9332]: State changed from up to complete
+2018-06-16T13:30:36.877756+00:00 heroku[run.9332]: Process exited with status 0
+2018-06-16T13:36:41.000000+00:00 app[api]: Build started by user bojja.s@hcl.com
+2018-06-16T13:37:14.713056+00:00 heroku[web.1]: State changed from crashed to starting
+2018-06-16T13:37:14.439485+00:00 app[api]: Deploy cac0fb7c by user bojja.s@hcl.com
+2018-06-16T13:37:14.000000+00:00 app[api]: Build succeeded
+2018-06-16T13:37:14.439485+00:00 app[api]: Release v52 created by user bojja.s@hcl.com
+2018-06-16T13:37:18.354579+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=51417 $JAVA_OPTS -jar target/seat-booking-0.0.1-SNAPSHOT.jar`
+2018-06-16T13:37:20.455865+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2018-06-16T13:37:20.480029+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-06-16T13:37:20.483963+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8
+2018-06-16T13:37:23.040329+00:00 app[web.1]: .   ____          _            __ _ _
+2018-06-16T13:37:23.039797+00:00 app[web.1]: 
+2018-06-16T13:37:23.040383+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-06-16T13:37:23.040443+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-06-16T13:37:23.040515+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-06-16T13:37:23.040554+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-06-16T13:37:23.040608+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2018-06-16T13:37:23.041750+00:00 app[web.1]: :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-06-16T13:37:23.041819+00:00 app[web.1]: 
+2018-06-16T13:37:23.352699+00:00 app[web.1]: 2018-06-16 13:37:23.346  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : Starting WebApplication v0.0.1-SNAPSHOT on 5ce8f1b6-2499-4f71-a55c-e71720879615 with PID 4 (/app/target/seat-booking-0.0.1-SNAPSHOT.jar started by u3976 in /app)
+2018-06-16T13:37:23.354092+00:00 app[web.1]: 2018-06-16 13:37:23.353  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : No active profile set, falling back to default profiles: default
+2018-06-16T13:37:23.476754+00:00 app[web.1]: 2018-06-16 13:37:23.476  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7cef4e59: startup date [Sat Jun 16 13:37:23 UTC 2018]; root of context hierarchy
+2018-06-16T13:37:25.445083+00:00 app[web.1]: 2018-06-16 13:37:25.438  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userController; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/controller/UserController.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]]
+2018-06-16T13:37:25.448233+00:00 app[web.1]: 2018-06-16 13:37:25.447  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]]
+2018-06-16T13:37:26.782323+00:00 app[web.1]: 2018-06-16 13:37:26.782  INFO 4 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de26809] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-16T13:37:27.662475+00:00 app[web.1]: 2018-06-16 13:37:27.662  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 51417 (http)
+2018-06-16T13:37:27.702409+00:00 app[web.1]: 2018-06-16 13:37:27.702  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-16T13:37:27.702808+00:00 app[web.1]: 2018-06-16 13:37:27.702  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-16T13:37:27.740810+00:00 app[web.1]: 2018-06-16 13:37:27.740  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-06-16T13:37:28.502783+00:00 app[web.1]: 2018-06-16 13:37:28.502  INFO 4 --- [ost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-06-16T13:37:28.969845+00:00 app[web.1]: 2018-06-16 13:37:28.969  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-16T13:37:28.970087+00:00 app[web.1]: 2018-06-16 13:37:28.969  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5498 ms
+2018-06-16T13:37:29.460281+00:00 app[web.1]: 2018-06-16 13:37:29.460  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-16T13:37:29.460932+00:00 app[web.1]: 2018-06-16 13:37:29.460  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-16T13:37:29.461204+00:00 app[web.1]: 2018-06-16 13:37:29.461  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-16T13:37:29.461360+00:00 app[web.1]: 2018-06-16 13:37:29.461  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-16T13:37:29.463065+00:00 app[web.1]: 2018-06-16 13:37:29.462  INFO 4 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-06-16T13:37:29.465795+00:00 app[web.1]: 2018-06-16 13:37:29.463  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-06-16T13:37:30.094920+00:00 app[web.1]: 2018-06-16 13:37:30.094  INFO 4 --- [           main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2018-06-16T13:37:30.117915+00:00 app[web.1]: 2018-06-16 13:37:30.114  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-06-16T13:37:30.823864+00:00 app[web.1]: 2018-06-16 13:37:30.817  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-06-16T13:37:30.861519+00:00 app[web.1]: 2018-06-16 13:37:30.861  INFO 4 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://ec2-23-21-238-28.compute-1.amazonaws.com:5432/d798ju9hj2tj13 (PostgreSQL 10.4)
+2018-06-16T13:37:31.211282+00:00 app[web.1]: 2018-06-16 13:37:31.210  INFO 4 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.099s)
+2018-06-16T13:37:31.351523+00:00 app[web.1]: 2018-06-16 13:37:31.351  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 6
+2018-06-16T13:37:31.357034+00:00 app[web.1]: 2018-06-16 13:37:31.356  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2018-06-16T13:37:31.908946+00:00 app[web.1]: 2018-06-16 13:37:31.908  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:31.948768+00:00 app[web.1]: 2018-06-16 13:37:31.948  INFO 4 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-16T13:37:31.948771+00:00 app[web.1]: name: default
+2018-06-16T13:37:31.948773+00:00 app[web.1]: ...]
+2018-06-16T13:37:32.177141+00:00 app[web.1]: 2018-06-16 13:37:32.172  INFO 4 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-06-16T13:37:32.185540+00:00 app[web.1]: 2018-06-16 13:37:32.185  INFO 4 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-06-16T13:37:32.312321+00:00 app[web.1]: 2018-06-16 13:37:32.296  INFO 4 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-06-16T13:37:33.529355+00:00 app[web.1]: 2018-06-16 13:37:33.528  INFO 4 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2018-06-16T13:37:33.612961+00:00 app[web.1]: 2018-06-16 13:37:33.612  INFO 4 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-06-16T13:37:33.617302+00:00 app[web.1]: 2018-06-16 13:37:33.616  INFO 4 --- [           main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2fd1433e
+2018-06-16T13:37:35.690915+00:00 app[web.1]: 2018-06-16 13:37:35.690  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:36.658160+00:00 app[web.1]: 2018-06-16 13:37:36.657  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'bCryptPasswordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-16T13:37:36.660265+00:00 app[web.1]: 2018-06-16 13:37:36.660  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:36.661317+00:00 app[web.1]: 2018-06-16 13:37:36.661  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-06-16T13:37:36.729622+00:00 app[web.1]: 2018-06-16 13:37:36.729  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-16T13:37:36.767429+00:00 app[web.1]: 2018-06-16 13:37:36.767  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener :
+2018-06-16T13:37:36.722999+00:00 app[web.1]: 2018-06-16 13:37:36.722  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-06-16T13:37:36.767433+00:00 app[web.1]: 
+2018-06-16T13:37:36.767435+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-06-16T13:37:36.953778+00:00 app[web.1]: 2018-06-16 13:37:36.953 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
+2018-06-16T13:37:36.953791+00:00 app[web.1]: 
+2018-06-16T13:37:36.953793+00:00 app[web.1]: ***************************
+2018-06-16T13:37:36.953795+00:00 app[web.1]: APPLICATION FAILED TO START
+2018-06-16T13:37:36.953796+00:00 app[web.1]: ***************************
+2018-06-16T13:37:36.953797+00:00 app[web.1]: 
+2018-06-16T13:37:36.953799+00:00 app[web.1]: Description:
+2018-06-16T13:37:36.953801+00:00 app[web.1]: 
+2018-06-16T13:37:36.953803+00:00 app[web.1]: Field bCryptPasswordEncoder in com.hcl.bootcamp.fs.springboot.app.service.UserServiceImpl required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+2018-06-16T13:37:36.953804+00:00 app[web.1]: 
+2018-06-16T13:37:36.953806+00:00 app[web.1]: 
+2018-06-16T13:37:36.953807+00:00 app[web.1]: Action:
+2018-06-16T13:37:36.953809+00:00 app[web.1]: 
+2018-06-16T13:37:36.953810+00:00 app[web.1]: Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+2018-06-16T13:37:36.953812+00:00 app[web.1]: 
+2018-06-16T13:37:37.113112+00:00 heroku[web.1]: State changed from starting to crashed
+2018-06-16T13:37:37.113112+00:00 heroku[web.1]: State changed from crashed to starting
+2018-06-16T13:37:37.077472+00:00 heroku[web.1]: Process exited with status 1
+2018-06-16T13:37:40.997143+00:00 heroku[web.1]: Starting process with command `java -Dserver.port=37934 $JAVA_OPTS -jar target/seat-booking-0.0.1-SNAPSHOT.jar`
+2018-06-16T13:37:42.680440+00:00 app[web.1]: Create a Procfile to customize the command used to run this process: https://devcenter.heroku.com/articles/procfile
+2018-06-16T13:37:42.703540+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-06-16T13:37:42.707561+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8
+2018-06-16T13:37:43.957995+00:00 app[web.1]: 
+2018-06-16T13:37:43.958054+00:00 app[web.1]: .   ____          _            __ _ _
+2018-06-16T13:37:43.958056+00:00 app[web.1]: /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-06-16T13:37:43.958101+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-06-16T13:37:43.958207+00:00 app[web.1]: \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-06-16T13:37:43.958291+00:00 app[web.1]: '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-06-16T13:37:43.958372+00:00 app[web.1]: =========|_|==============|___/=/_/_/_/
+2018-06-16T13:37:43.961344+00:00 app[web.1]: :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-06-16T13:37:43.961409+00:00 app[web.1]: 
+2018-06-16T13:37:44.181639+00:00 app[web.1]: 2018-06-16 13:37:44.176  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : Starting WebApplication v0.0.1-SNAPSHOT on d6984b27-4173-4d5c-a089-7fab22e8a0a7 with PID 4 (/app/target/seat-booking-0.0.1-SNAPSHOT.jar started by u39161 in /app)
+2018-06-16T13:37:44.186669+00:00 app[web.1]: 2018-06-16 13:37:44.186  INFO 4 --- [           main] c.h.b.fs.springboot.app.WebApplication   : No active profile set, falling back to default profiles: default
+2018-06-16T13:37:44.352188+00:00 app[web.1]: 2018-06-16 13:37:44.351  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@424c0bc4: startup date [Sat Jun 16 13:37:44 UTC 2018]; root of context hierarchy
+2018-06-16T13:37:45.608429+00:00 app[web.1]: 2018-06-16 13:37:45.608  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userController; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/controller/UserController.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]]
+2018-06-16T13:37:45.609575+00:00 app[web.1]: 2018-06-16 13:37:45.609  INFO 4 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'passwordEncoder' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=webSecurityConfig; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/config/WebSecurityConfig.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=userServiceImpl; factoryMethodName=passwordEncoder; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/hcl/bootcamp/fs/springboot/app/service/UserServiceImpl.class]]
+2018-06-16T13:37:46.708713+00:00 app[web.1]: 2018-06-16 13:37:46.708  INFO 4 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$695afae0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-16T13:37:47.304750+00:00 app[web.1]: 2018-06-16 13:37:47.304  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 37934 (http)
+2018-06-16T13:37:47.361931+00:00 app[web.1]: 2018-06-16 13:37:47.361  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-16T13:37:47.362424+00:00 app[web.1]: 2018-06-16 13:37:47.362  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-16T13:37:47.381106+00:00 app[web.1]: 2018-06-16 13:37:47.380  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-06-16T13:37:47.838159+00:00 app[web.1]: 2018-06-16 13:37:47.837  INFO 4 --- [ost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-06-16T13:37:48.119050+00:00 app[web.1]: 2018-06-16 13:37:48.118  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-16T13:37:48.119260+00:00 app[web.1]: 2018-06-16 13:37:48.119  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3772 ms
+2018-06-16T13:37:48.432642+00:00 app[web.1]: 2018-06-16 13:37:48.432  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-16T13:37:48.433232+00:00 app[web.1]: 2018-06-16 13:37:48.433  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-06-16T13:37:48.433571+00:00 app[web.1]: 2018-06-16 13:37:48.433  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-06-16T13:37:48.433723+00:00 app[web.1]: 2018-06-16 13:37:48.433  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-06-16T13:37:48.434492+00:00 app[web.1]: 2018-06-16 13:37:48.434  INFO 4 --- [ost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-06-16T13:37:48.434779+00:00 app[web.1]: 2018-06-16 13:37:48.434  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-06-16T13:37:48.679569+00:00 app[web.1]: 2018-06-16 13:37:48.679  INFO 4 --- [           main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2018-06-16T13:37:48.694599+00:00 app[web.1]: 2018-06-16 13:37:48.692  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-06-16T13:37:49.244837+00:00 app[web.1]: 2018-06-16 13:37:49.244  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-06-16T13:37:49.255987+00:00 app[web.1]: 2018-06-16 13:37:49.255  INFO 4 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:postgresql://ec2-23-21-238-28.compute-1.amazonaws.com:5432/d798ju9hj2tj13 (PostgreSQL 10.4)
+2018-06-16T13:37:49.366599+00:00 app[web.1]: 2018-06-16 13:37:49.366  INFO 4 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.040s)
+2018-06-16T13:37:49.422198+00:00 app[web.1]: 2018-06-16 13:37:49.421  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 6
+2018-06-16T13:37:49.424658+00:00 app[web.1]: 2018-06-16 13:37:49.424  INFO 4 --- [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2018-06-16T13:37:49.665569+00:00 app[web.1]: 2018-06-16 13:37:49.665  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:49.693784+00:00 app[web.1]: 2018-06-16 13:37:49.693  INFO 4 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2018-06-16T13:37:49.693788+00:00 app[web.1]: name: default
+2018-06-16T13:37:49.693789+00:00 app[web.1]: ...]
+2018-06-16T13:37:49.824082+00:00 app[web.1]: 2018-06-16 13:37:49.823  INFO 4 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.16.Final}
+2018-06-16T13:37:49.825972+00:00 app[web.1]: 2018-06-16 13:37:49.825  INFO 4 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-06-16T13:37:49.880516+00:00 app[web.1]: 2018-06-16 13:37:49.880  INFO 4 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-06-16T13:37:50.151942+00:00 app[web.1]: 2018-06-16 13:37:50.151  INFO 4 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL9Dialect
+2018-06-16T13:37:50.188904+00:00 app[web.1]: 2018-06-16 13:37:50.188  INFO 4 --- [           main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000422: Disabling contextual LOB creation as connection was null
+2018-06-16T13:37:50.191852+00:00 app[web.1]: 2018-06-16 13:37:50.191  INFO 4 --- [           main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@37654521
+2018-06-16T13:37:51.160090+00:00 app[web.1]: 2018-06-16 13:37:51.159  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:51.902628+00:00 app[web.1]: 2018-06-16 13:37:51.902  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'bCryptPasswordEncoder'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-16T13:37:51.904198+00:00 app[web.1]: 2018-06-16 13:37:51.903  INFO 4 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-16T13:37:51.905301+00:00 app[web.1]: 2018-06-16 13:37:51.905  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-06-16T13:37:51.965647+00:00 app[web.1]: 2018-06-16 13:37:51.965  INFO 4 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-06-16T13:37:51.968018+00:00 app[web.1]: 2018-06-16 13:37:51.967  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-16T13:37:51.995110+00:00 app[web.1]: 2018-06-16 13:37:51.994  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener :
+2018-06-16T13:37:51.995114+00:00 app[web.1]: 
+2018-06-16T13:37:51.995116+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-06-16T13:37:52.150007+00:00 app[web.1]: 2018-06-16 13:37:52.149 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   :
+2018-06-16T13:37:52.150011+00:00 app[web.1]: 
+2018-06-16T13:37:52.150014+00:00 app[web.1]: ***************************
+2018-06-16T13:37:52.150016+00:00 app[web.1]: APPLICATION FAILED TO START
+2018-06-16T13:37:52.150017+00:00 app[web.1]: ***************************
+2018-06-16T13:37:52.150019+00:00 app[web.1]: 
+2018-06-16T13:37:52.150021+00:00 app[web.1]: Description:
+2018-06-16T13:37:52.150023+00:00 app[web.1]: 
+2018-06-16T13:37:52.150028+00:00 app[web.1]: Field bCryptPasswordEncoder in com.hcl.bootcamp.fs.springboot.app.service.UserServiceImpl required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+2018-06-16T13:37:52.150030+00:00 app[web.1]: 
+2018-06-16T13:37:52.150032+00:00 app[web.1]: 
+2018-06-16T13:37:52.150033+00:00 app[web.1]: Action:
+2018-06-16T13:37:52.150035+00:00 app[web.1]: 
+2018-06-16T13:37:52.150037+00:00 app[web.1]: Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+2018-06-16T13:37:52.150039+00:00 app[web.1]: 
+2018-06-16T13:37:52.283064+00:00 heroku[web.1]: State changed from starting to crashed
+2018-06-16T13:37:52.258384+00:00 heroku[web.1]: Process exited with status 1
+2018-06-16T13:39:15.756212+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=bojja-seating-app.herokuapp.com request_id=2de057b8-4c9b-475f-8e2b-35d2abfe7ee0 fwd="27.59.174.122" dyno= connect= service= status=503 bytes= protocol=https
+2018-06-16T13:39:16.481057+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=bojja-seating-app.herokuapp.com request_id=f7729649-d714-4240-a1f2-090cc6790ff4 fwd="27.59.174.122" dyno= connect= service= status=503 bytes= protocol=https
