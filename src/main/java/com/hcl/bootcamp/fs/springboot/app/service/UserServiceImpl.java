@@ -35,9 +35,5 @@ public class UserServiceImpl implements UserService {
     public User findByUserName(String username) {
         return userRepository.findByUserName(username);
     }
-    
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}    
+ 
 }

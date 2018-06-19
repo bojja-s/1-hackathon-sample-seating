@@ -12,35 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
 	<title>Book Tickets View</title>
-	
-	<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-	<style>
-		#wrapper {
-			margin-left: 300px;
-		}
-		
-		#seats {
-			float: right;
-			width: 70%;
-			margin-left: -200px;
-		}
-		
-		#sections {
-			float: left;
-			width: 40%;
-			margin-left: -200px;
-		}
-		
-		#cleared {
-			clear: both;
-		}
-	</style>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 	<div id="wrapper">
-
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			<form id="logoutForm" method="POST" action="${contextPath}/logout">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -49,13 +26,11 @@
 				Welcome ${pageContext.request.userPrincipal.name} | 
 				<a onclick="document.forms['logoutForm'].submit()">Logout</a>
 			</h2>
-
 		</c:if>
 		<div class="form-group">
 			<form:form method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">
 				Select Section: 
-				<form:select id="sections" name='role' path="sectionId"
-					onchange="myFunc(value)">
+				<form:select id="sections" name='role' path="sectionId" onchange="myFunc(value)">
 					<c:forEach varStatus="loop" items="${sections}" var="section">
 						<c:choose>
 							<c:when test="${loop.index eq 0}">
@@ -67,25 +42,21 @@
 						</c:choose>
 					</c:forEach>
 				</form:select>
-		</div>
-		<div class="form-group">
 			Select Seat:
-			<form:select id="seats" path="seatId" multiple="true"
-				onchange="myFunc2(value)">
+			<form:select id="seats" path="seatName" multiple="true" onchange="myFunc2(value)">
 				<c:forEach varStatus="loop" items="${seats}" var="seat">
 					<c:choose>
 						<c:when test="${loop.index eq 0}">
-							<option value="${seat.getId()}" selected="true">${seat.getName()}</option>
+							<option value="${seat.getName()}" selected="true">${seat.getName()}</option>
 						</c:when>
 						<c:otherwise>
-							<option value="${seat.getId()}">${seat.getName()}</option>
+							<option value="${seat.getName()}">${seat.getName()}</option>
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
 			</form:select>
-		</div>
-								<button id="bookTickets" class="btn btn-lg btn-primary btn-block"
-							type="submit">Book Ticket</button>
+
+			<button id="bookTickets"  type="submit">Book Ticket</button>
 		</form:form>
 		<div id="cleared"></div>
 	</div>
@@ -100,6 +71,6 @@ function myFunc2($val) {
 </script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

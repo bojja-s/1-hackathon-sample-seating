@@ -9,5 +9,6 @@ public class SectionForm {
 	private String sectionName;
 	private Long seatId;
 	private String seatName;
+	private Long secretValue;
 
 }

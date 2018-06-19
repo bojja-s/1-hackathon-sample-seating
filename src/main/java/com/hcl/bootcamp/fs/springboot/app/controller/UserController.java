@@ -98,8 +98,5 @@ public class UserController {
 		}		
 		return user;
 	}
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}	
+
 }
