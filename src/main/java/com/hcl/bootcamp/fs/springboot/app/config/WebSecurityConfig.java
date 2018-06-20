@@ -20,9 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
@@ -36,10 +34,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
+	@Bean
 	public DaoAuthenticationProvider authProvider() {
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 		authProvider.setUserDetailsService(userDetailsService);
-		authProvider.setPasswordEncoder(passwordEncoder);
+		authProvider.setPasswordEncoder(passwordEncoder());
 		return authProvider;
 	}
 

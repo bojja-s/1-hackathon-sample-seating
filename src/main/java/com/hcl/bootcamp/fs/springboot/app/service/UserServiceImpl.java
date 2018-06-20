@@ -24,9 +24,6 @@ public class UserServiceImpl implements UserService {
     
     @Autowired
     private RoleRepository roleRepository;
-    
-	@Autowired
-	private PasswordEncoder passwordEncoder;
 
     @Override
     public void save(User user) {
@@ -35,7 +32,7 @@ public class UserServiceImpl implements UserService {
 			logger.info("[START] UserServiceImpl save user.getPassword() " + user.getPassword());
 			logger.info("[START] UserServiceImpl save passwordEncoder.encode(user.getPassword()) " + passwordEncoder.encode(user.getPassword()));
 		}		
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setPassword(passwordEncoder().encode(user.getPassword()));
         user.setRoles(new HashSet<>(roleRepository.findAll()));
         userRepository.save(user);
 		if (logger.isInfoEnabled()) {
@@ -50,5 +47,10 @@ public class UserServiceImpl implements UserService {
 		}			
         return userRepository.findByUserName(username);
     }
+	
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}	
  
 }
