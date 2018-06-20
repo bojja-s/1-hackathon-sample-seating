@@ -60,7 +60,7 @@ public class UserController {
 		}
 
 		System.out.println("login GET [" + logout + "] " + " [" + error + "]");
-		model.addAttribute("userForm", new User());
+		model.addAttribute("userForm", new UserForm());
 		if (error != null) {
 			model.addAttribute("error", "Your username and password is invalid.");
 		}

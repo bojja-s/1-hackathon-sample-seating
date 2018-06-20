@@ -102,7 +102,15 @@
 			<br/>
 		</spring:bind>
 		
-
+		<spring:bind path="email">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<label for="email">&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+				<form:input type="text" path="email" class="form-control" placeholder=""
+							autofocus="true"></form:input>
+				<form:errors path="email"></form:errors>
+			</div>
+			<br/>
+		</spring:bind>
 		
 		<spring:bind path="location">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
