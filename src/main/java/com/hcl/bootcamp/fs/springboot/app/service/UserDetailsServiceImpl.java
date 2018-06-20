@@ -49,7 +49,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
 					user.getEnable(), true, true, true, getAuthorities(user.getRoles()));
 		} catch (final Exception e) {
-			LOGGER.error(e.getMessage(), e);
+			logger.error(e.getMessage(), e);
 			throw new UsernameNotFoundException("No user found with username: " + username);
 		}
 		if (logger.isInfoEnabled()) {
