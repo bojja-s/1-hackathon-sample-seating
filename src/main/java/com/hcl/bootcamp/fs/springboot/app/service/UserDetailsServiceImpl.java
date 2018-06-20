@@ -35,15 +35,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		if (logger.isInfoEnabled()) {
-			logger.info("[START] SecurityServiceImpl loadUserByUsername username " + username);
+			logger.info("[START] UserDetailsServiceImpl loadUserByUsername username " + username);
 		}		
 		try {
 			final User user = userRepository.findByUserName(username);
 			//logger.info(user == null);
-			logger.info(user.getUserName());
-			logger.info(user.getPassword());
+			logger.info("User:" +user.getUserName());
+			logger.info("Pwd:" + user.getPassword());
 			
 			if (user == null) {
+				if (logger.isInfoEnabled()) {
+					logger.info(" No user found with username: " + username);
+				}				
 				throw new UsernameNotFoundException("No user found with username: " + username);
 			}
 			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
@@ -62,14 +65,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	private final List<GrantedAuthority> getGrantedAuthorities(final List<String> privileges) {
 		if (logger.isInfoEnabled()) {
-			logger.info("[START] SecurityServiceImpl getGrantedAuthorities");
+			logger.info("[START] UserDetailsServiceImpl getGrantedAuthorities");
 		}		
 		final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		for (final String privilege : privileges) {
 			authorities.add(new SimpleGrantedAuthority(privilege));
 		}
 		if (logger.isInfoEnabled()) {
-			logger.info("[END] SecurityServiceImpl getGrantedAuthorities");
+			logger.info("[END] UserDetailsServiceImpl getGrantedAuthorities");
 		}			
 		return authorities;
 	}
