@@ -1,5 +1,7 @@
 package com.hcl.bootcamp.fs.springboot.app.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.hcl.bootcamp.fs.springboot.app.jpa.RoleRepository;
 import com.hcl.bootcamp.fs.springboot.app.jpa.UserRepository;
 import com.hcl.bootcamp.fs.springboot.app.model.User;
