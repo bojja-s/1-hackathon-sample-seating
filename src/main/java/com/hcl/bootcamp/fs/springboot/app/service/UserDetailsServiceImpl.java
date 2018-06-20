@@ -42,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			logger.info("User:" +user.getUserName());
 			logger.info("Pwd:" + user.getPassword());
 			logger.info("Pwd:" + user.getRoles());
-			logger.info("Pwd:" + user.getEnable());
+			//logger.info("Pwd:" + user.getEnable());
 			
 			if (user == null) {
 				if (logger.isInfoEnabled()) {
@@ -51,7 +51,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				throw new UsernameNotFoundException("No user found with username: " + username);
 			}
 			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
-					user.getEnable(), true, true, true, getAuthorities(user.getRoles()));
+					true, true, true, true, getAuthorities(user.getRoles()));
 		} catch (final Exception e) {
 			logger.error(e.getMessage(), e);
 			throw new UsernameNotFoundException("No user found with username: " + username);
