@@ -19,10 +19,6 @@ import lombok.ToString;
 
 @Entity(name = "roles")
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
