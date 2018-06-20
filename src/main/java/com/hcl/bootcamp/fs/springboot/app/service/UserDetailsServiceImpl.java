@@ -34,8 +34,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		if (logger.isInfoEnabled()) {
+			logger.info("[START] SecurityServiceImpl loadUserByUsername username " + username);
+		}		
 		try {
 			final User user = userRepository.findByUserName(username);
+			logger.info(user == null);
+			logger.info(user.getUserName());
+			logger.info(user.getPassword());
+			
 			if (user == null) {
 				throw new UsernameNotFoundException("No user found with username: " + username);
 			}
@@ -45,6 +52,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			LOGGER.error(e.getMessage(), e);
 			throw new UsernameNotFoundException("No user found with username: " + username);
 		}
+		if (logger.isInfoEnabled()) {
+			logger.info("[END] SecurityServiceImpl loadUserByUsername");
+		}		
 	}
 	
 	private final Collection<? extends GrantedAuthority> getAuthorities(final Collection<Role> roles) {
@@ -54,10 +64,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	}
 
 	private final List<GrantedAuthority> getGrantedAuthorities(final List<String> privileges) {
+		if (logger.isInfoEnabled()) {
+			logger.info("[START] SecurityServiceImpl getGrantedAuthorities");
+		}		
 		final List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		for (final String privilege : privileges) {
 			authorities.add(new SimpleGrantedAuthority(privilege));
 		}
+		if (logger.isInfoEnabled()) {
+			logger.info("[END] SecurityServiceImpl getGrantedAuthorities");
+		}			
 		return authorities;
 	}
 

@@ -12,27 +12,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements SecurityService{
 	
-//	@Qualifier("authenticationManagerBean")
-//    @Autowired
-//    private AuthenticationManager authenticationManager;
-
     @Autowired
     private UserDetailsService userDetailsService;
 
-    private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String findLoggedInUsername() {
+		if (logger.isInfoEnabled()) {
+			logger.info("[START] SecurityServiceImpl findLoggedInUsername");
+		}		
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
         if (userDetails instanceof UserDetails) {
             return ((UserDetails)userDetails).getUsername();
         }
-
+		if (logger.isInfoEnabled()) {
+			logger.info("[END] SecurityServiceImpl findLoggedInUsername");
+		}
         return null;
     }
 
     @Override
     public void autologin(String username, String password) {
+		if (logger.isInfoEnabled()) {
+			logger.info("[START] SecurityServiceImpl autologin");
+		}		
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 
@@ -42,5 +46,8 @@ public class SecurityServiceImpl implements SecurityService{
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             logger.debug(String.format("Auto login %s successfully!", username));
         }
+		if (logger.isInfoEnabled()) {
+			logger.info("[END] SecurityServiceImpl autologin");
+		}		
     }
 }
