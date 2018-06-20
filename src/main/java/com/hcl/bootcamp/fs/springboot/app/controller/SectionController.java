@@ -39,8 +39,10 @@ public class SectionController {
 		val x = m_SectionRepository.findAll();
 		model.addAttribute("sectionForm", new SectionForm());
 		model.addAttribute("sections", x);
+		
 		if (x != null && x.size() > 0) {
 			Section i_Section = x.get(0);
+			model.addAttribute("selectedSection", i_Section.getId());
 			List<Seat> i_SeatsList = i_Section.getSeats();
 			List<Seat> i_SeatsAvailableList = new ArrayList<Seat>();
 			for ( Seat i_Seat: i_SeatsList) {
@@ -64,23 +66,6 @@ public class SectionController {
 		if (logger.isInfoEnabled()) {
 			logger.info("[START] SectionController booktickets POST");
 		}
-//		Long i_SecretValue = sectionForm.getSecretValue();
-//		if (logger.isInfoEnabled()) {
-//			logger.info("	i_SecretValue [" + i_SecretValue + "] ");
-//		}
-//		if (!i_SecretValue.equals("0")) {
-//			logger.info("	********************************************************************************* ");
-//			Optional<Section> i_Section = m_SectionRepository.findById(i_SecretValue);
-//			if (i_Section.isPresent()) {
-//				model.addAttribute("seats", i_Section.get().getSeats());
-//				return "screen2";
-//			}else {
-//				if (logger.isWarnEnabled()) {
-//					logger.warn("	Error, section  " + i_SecretValue + " is NOT present");
-//				}
-//				return "screen2";
-//			}
-//		}
 		String i_User = UserDetailsHeper.findLoggedInUsername();
 		Long i_SectionID = sectionForm.getSectionId();
 		//Long i_SeatID = sectionForm.getSeatId();
@@ -116,5 +101,35 @@ public class SectionController {
 			logger.info("[END] SectionController booktickets POST");
 		}		
 		return "screen3";
+	}
+	@RequestMapping(value = "/getsections")
+	public String getsections(@ModelAttribute("sectionForm") SectionForm sectionForm, BindingResult bindingResult,Model model) {
+		if (logger.isInfoEnabled()) {
+			logger.info("[START] SectionController getsections");
+		}
+		String i_User = UserDetailsHeper.findLoggedInUsername();
+		Long i_SectionID = sectionForm.getSectionId();
+		model.addAttribute("selectedSection", i_SectionID);
+		//Long i_SeatID = sectionForm.getSeatId();
+		String i_SeatName = sectionForm.getSeatName();
+		if (logger.isInfoEnabled()) {
+			logger.info("	i_SectionID [" + i_SectionID + "]  i_User [" + i_User + "] i_SeatName [" + i_SeatName +"]");
+		}		
+		Optional<Section> i_Section = m_SectionRepository.findById(i_SectionID);		
+		val x = m_SectionRepository.findAll();
+		model.addAttribute("sectionForm", new SectionForm());
+		model.addAttribute("sections", x);
+		List<Seat> i_SeatsList = i_Section.get().getSeats();
+		List<Seat> i_SeatsAvailableList = new ArrayList<Seat>();
+		for ( Seat i_Seat: i_SeatsList) {
+			if (i_Seat.getAvailable() == Boolean.FALSE ) {
+				logger.info("  *** i_Seat " + i_Seat.getName() + " already booked");
+			}else {
+				logger.info("  $ i_Seat " + i_Seat.getName() + " to be booked");
+				i_SeatsAvailableList.add(i_Seat);
+			}
+		}		
+		model.addAttribute("seats", i_SeatsAvailableList);
+		return "screen2";
 	}
 }

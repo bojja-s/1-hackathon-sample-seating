@@ -13,11 +13,35 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Book Tickets View</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+<style>
+#wrapper {
+  margin-left: 300px;
+}
+#signin {
+  float: left;
+  width: 40%;
+   margin-left: -200px;
+  border: 2px solid black
+  
+}
+#signup {
+  float: left;
+  width: 50%;
+  margin-left: -200px
+  
+}
+#cleared {
+
+  clear: both;
+}
+</style>  
 </head>
 
 <body>
-	<div id="wrapper">
+	
+<div id="wrapper">
 		<c:if test="${pageContext.request.userPrincipal.name != null}">
 			<form id="logoutForm" method="POST" action="${contextPath}/logout">
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -27,39 +51,52 @@
 				<a onclick="document.forms['logoutForm'].submit()">Logout</a>
 			</h2>
 		</c:if>
-		<div class="form-group">
-			<form:form method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">
-				Select Section: 
-				<form:select id="sections" name='role' path="sectionId" onchange="myFunc(value)">
+		<br/>
+	<div class="container1" id="signup">
+			
+				<label for="sections">List of Sections: </label>
+				<form:form method="POST" id="firstForm" modelAttribute="sectionForm" action="/getsections" class="form-signin">
+				<form:select id="sections" name='role' path="sectionId" onchange="submit()">
 					<c:forEach varStatus="loop" items="${sections}" var="section">
+						
+							<c:if test="${section.id != selectedSection}">
+								<option value="${section.id}">${section.name}</option>
+							</c:if>
+							<c:if test="${section.id == selectedSection}">
+								<option value="${section.id}" selected="selected">${section.name}</option>
+							</c:if>
+						
+					</c:forEach>
+				</form:select>
+				</form:form>
+</div><br/>
+
+		<div class="container2" id="signin" >			
+			<form:form method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">	
+			<label for="seats">Available Seats: ${seats.size()}</label>
+			<div>
+				<form:select id="seats" path="seatName" multiple="true" onchange="myFunc2(value)" size="5">
+					<c:forEach varStatus="loop" items="${seats}" var="seat">
 						<c:choose>
 							<c:when test="${loop.index eq 0}">
-								<option value="${section.getId()}" selected="true">${section.getName()}</option>
+								<option value="${seat.getName()}" selected="true">${seat.getName()}</option>
 							</c:when>
 							<c:otherwise>
-								<option value="${section.getId()}">${section.getName()}</option>
+								<option value="${seat.getName()}">${seat.getName()}</option>
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>
 				</form:select>
-			Select Seat:
-			<form:select id="seats" path="seatName" multiple="true" onchange="myFunc2(value)">
-				<c:forEach varStatus="loop" items="${seats}" var="seat">
-					<c:choose>
-						<c:when test="${loop.index eq 0}">
-							<option value="${seat.getName()}" selected="true">${seat.getName()}</option>
-						</c:when>
-						<c:otherwise>
-							<option value="${seat.getName()}">${seat.getName()}</option>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-			</form:select>
-
-			<button id="bookTickets"  type="submit">Book Ticket</button>
+			</div>
+			<br/>
+			<div>
+				<button id="bookTickets"  type="submit">Book Ticket</button>
+			</div>
+			<br/>
 		</form:form>
-		<div id="cleared"></div>
+
 	</div>
+</div>	
 	<!-- /container -->
 	<script>
 function myFunc($val) {
@@ -69,8 +106,7 @@ function myFunc2($val) {
     alert($val);
    }       
 </script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -50,17 +50,24 @@
 <div class="container1" id="signin">
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
+        <h2 class="form-heading">&nbsp;&nbsp;&nbsp;Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>
-            <input name="username" type="text" class="form-control" placeholder="Username"
-                   autofocus="true"/>
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
+            <div>
+	            <label for="nameInput">&nbsp;&nbsp;&nbsp;Username: </label>  
+	            <input name="username" type="text" class="form-control" placeholder=""
+	                   autofocus="true"/>
+            </div>
+            <br/>
+            <div>
+            <label for="nameInput">&nbsp;&nbsp;&nbsp;Password: </label>  
+            <input name="password" type="password" class="form-control" placeholder=""/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+			</div>
+			<br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
             
         </div>
 
@@ -72,65 +79,79 @@
 <div class="container2" id="signup" >
 
     <form:form method="POST" action="${contextPath}/registration" modelAttribute="userForm" class="form-signin">
-       
+       <h2 class="form-heading">&nbsp;&nbsp;&nbsp;Register</h2>
         
 		<spring:bind path="firstName">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
 			<form:hidden path=""/>
-				<form:input type="text" path="firstName" class="form-control" placeholder="First Name"
+				<label for="firstName">&nbsp;&nbsp;&nbsp;First Name:&nbsp;&nbsp;&nbsp; </label>  
+				<form:input type="text" path="firstName" class="form-control" placeholder=""
 							autofocus="true"></form:input>
 				<form:errors path="firstName"></form:errors>
 			</div>
+			<br/>
 		</spring:bind>
 		
 		<spring:bind path="lastName">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:input type="text" path="lastName" class="form-control" placeholder="Last Name"
+				<label for="lastName">&nbsp;&nbsp;&nbsp;Last Name:&nbsp;&nbsp;&nbsp; </label> 
+				<form:input type="text" path="lastName" class="form-control" placeholder=""
 							autofocus="true"></form:input>
 				<form:errors path="lastName"></form:errors>
 			</div>
+			<br/>
 		</spring:bind>
 		
 		<spring:bind path="email">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:input type="text" path="email" class="form-control" placeholder="email"
+				<label for="email">&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+				<form:input type="text" path="email" class="form-control" placeholder=""
 							autofocus="true"></form:input>
 				<form:errors path="email"></form:errors>
 			</div>
+			<br/>
 		</spring:bind>
 		
 		<spring:bind path="location">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:input type="text" path="location" class="form-control" placeholder="location"
+				<label for="location">&nbsp;&nbsp;&nbsp;Location: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>  
+				<form:input type="text" path="location" class="form-control" placeholder=""
 							autofocus="true"></form:input>
 				<form:errors path="location"></form:errors>
 			</div>
+			<br/>
 		</spring:bind>
 		<spring:bind path="state">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<label for="state">&nbsp;&nbsp;&nbsp;State:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>  
 				<form:select path="state">
 				    <form:options items="${states}" />
 				</form:select>	
 				</div>
+				<br/>
 		</spring:bind>
 		
 		<spring:bind path="password">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:input type="text" path="password" class="form-control" placeholder="password"
+				<label for="password">&nbsp;&nbsp;&nbsp;Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>  
+				<form:input type="text" path="password" class="form-control" placeholder=""
 							autofocus="true"></form:input>
 				<form:errors path="password"></form:errors>
 			</div>
+			<br/>
 		</spring:bind>
 
         <spring:bind path="passwordConfirm">
             <div class="form-group ${status.error ? 'has-error' : ''}">
+            	<label for="passwordConfirm">&nbsp;&nbsp;&nbsp;PW Confirm: </label>  
                 <form:input type="password" path="passwordConfirm" class="form-control"
                             placeholder="Confirm your password"></form:input>
                 <form:errors path="passwordConfirm"></form:errors>
             </div>
+            <br/>
         </spring:bind>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form:form>
 
 </div>
