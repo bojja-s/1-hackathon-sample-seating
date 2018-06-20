@@ -20,6 +20,9 @@ import com.hcl.bootcamp.fs.springboot.app.jpa.UserRepository;
 import com.hcl.bootcamp.fs.springboot.app.model.Role;
 import com.hcl.bootcamp.fs.springboot.app.model.User;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 /**
  * @author seethayya.n
  *
