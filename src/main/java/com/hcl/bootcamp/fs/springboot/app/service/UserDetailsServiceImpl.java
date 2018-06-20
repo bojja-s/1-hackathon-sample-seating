@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		}		
 		try {
 			final User user = userRepository.findByUserName(username);
-			logger.info(user == null);
+			//logger.info(user == null);
 			logger.info(user.getUserName());
 			logger.info(user.getPassword());
 			
