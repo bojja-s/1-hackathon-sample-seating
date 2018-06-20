@@ -52,7 +52,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			logger.error(e.getMessage(), e);
 			throw new UsernameNotFoundException("No user found with username: " + username);
 		}
-		return null;
 	}
 	
 	private final Collection<? extends GrantedAuthority> getAuthorities(final Collection<Role> roles) {
