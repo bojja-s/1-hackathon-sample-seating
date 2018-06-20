@@ -89,7 +89,7 @@ public class UserController {
 				.createdAt(Calendar.getInstance().getTime()).build();
 		if (logger.isInfoEnabled()){
 			logger.info( user.getUserName() );
-			logger.info( user.getEmail() );
+			//logger.info( user.getEmail() );
 			logger.info( user.getFirstName() );
 			logger.info( user.getLastName() );
 			logger.info( user.getLocation() );
