@@ -32,6 +32,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
 
+	static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		if (logger.isInfoEnabled()) {
@@ -39,7 +41,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		}		
 		try {
 			final User user = userRepository.findByUserName(username);
-			//logger.info(user == null);
 			logger.info("User:" +user.getUserName());
 			logger.info("Pwd:" + user.getPassword());
 			
@@ -49,7 +50,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				}				
 				throw new UsernameNotFoundException("No user found with username: " + username);
 			}
-			return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
+			return new org.springframework.security.core.userdetails.User(user.getUserName(), passwordEncoder.encode(user.getPassword()),
 					user.getEnable(), true, true, true, getAuthorities(user.getRoles()));
 		} catch (final Exception e) {
 			logger.error(e.getMessage(), e);
