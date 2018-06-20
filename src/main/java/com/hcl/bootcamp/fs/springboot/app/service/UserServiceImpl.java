@@ -28,9 +28,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
 		if (logger.isInfoEnabled()) {
-			logger.info("[START] UserServiceImpl save");
-			logger.info("[START] UserServiceImpl save user.getPassword() " + user.getPassword());
-			logger.info("[START] UserServiceImpl save passwordEncoder.encode(user.getPassword()) " + passwordEncoder().encode(user.getPassword()));
+			logger.info("[START] UserServiceImpl *save");
+			//logger.info("[START] UserServiceImpl save user.getPassword() " + user.getPassword());
+			//logger.info("[START] UserServiceImpl save passwordEncoder.encode(user.getPassword()) " + passwordEncoder().encode(user.getPassword()));
 		}		
         user.setPassword(passwordEncoder().encode(user.getPassword()));
         user.setRoles(new HashSet<>(roleRepository.findAll()));

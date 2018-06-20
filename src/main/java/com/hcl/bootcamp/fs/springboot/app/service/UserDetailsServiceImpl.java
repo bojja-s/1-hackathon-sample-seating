@@ -39,9 +39,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		}		
 		try {
 			final User user = userRepository.findByUserName(username);
-			logger.info("User:" +user.getUserName());
-			logger.info("Pwd:" + user.getPassword());
-			logger.info("Pwd:" + user.getRoles());
+			//logger.info("User:" +user.getUserName());
+			//logger.info("Pwd:" + user.getPassword());
+			//logger.info("Pwd:" + user.getRoles());
 			//logger.info("Pwd:" + user.getEnable());
 			
 			if (user == null) {
