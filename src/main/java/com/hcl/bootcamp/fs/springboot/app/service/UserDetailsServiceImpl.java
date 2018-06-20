@@ -27,7 +27,7 @@ import com.hcl.bootcamp.fs.springboot.app.model.User;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private UserRepository userRepository;
