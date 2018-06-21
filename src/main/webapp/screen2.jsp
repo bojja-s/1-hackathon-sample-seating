@@ -87,7 +87,7 @@
 						</c:choose>
 					</c:forEach>
 				</form:select>
-				<form:hidden path="sectionName" value=""/>
+				<form:hidden path="sectionId" value=""/>
 			</div>
 			<br/>
 			<div>
