@@ -104,9 +104,11 @@
 function myFunc($val) {
 	var sel = document.getElementById('sections');
 	var opt = sel.options[sel.selectedIndex];
+	alert(opt.value);
 	document.forms['secondForm']['sectionId'].value = opt.value;
+	alert(document.forms['secondForm']['sectionId'].value);
 	document.forms['secondForm']['secretValue'].value = opt.text;
-	
+	alert(document.forms['secondForm']['secretValue'].value);
 	document.forms['firstForm'].submit();
        }
 function myFunc2($val) {
