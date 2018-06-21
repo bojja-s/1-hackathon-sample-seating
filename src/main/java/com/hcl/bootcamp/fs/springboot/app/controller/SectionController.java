@@ -68,10 +68,12 @@ public class SectionController {
 		}
 		String i_User = UserDetailsHeper.findLoggedInUsername();
 		Long i_SectionID = sectionForm.getSectionId();
+		Long secretValue = sectionForm.getSecretValue() ;
+		logger.info(" *	secretValue "  + secretValue );
 		//Long i_SeatID = sectionForm.getSeatId();
 		String i_SeatName = sectionForm.getSeatName();
 		if (logger.isInfoEnabled()) {
-			logger.info("	i_SectionID [" + i_SectionID + "]  i_User [" + i_User + "] i_SeatName [" + i_SeatName +"]");
+			logger.info(" *	i_SectionID [" + i_SectionID + "]  i_User [" + i_User + "] i_SeatName [" + i_SeatName +"]");
 		}		
 		Optional<Section> i_Section = m_SectionRepository.findById(i_SectionID);
 		//Optional<Section> i_Section = m_SectionRepository.findById(i_SectionID);
