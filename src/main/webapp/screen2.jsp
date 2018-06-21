@@ -101,10 +101,10 @@
 	<!-- /container -->
 	<script>
 function myFunc($val) {
-		alert(document.forms['firstForm']['sections'].selected);// = "Value";
-		document.forms['secondForm']['sectionName'].value = "Assigned Value";
-        alert(document.forms['secondForm']['sectionName'].value);
-        
+	var sel = document.getElementById('sections');
+	var opt = sel.options[sel.selectedIndex];
+	document.forms['secondForm']['sectionName'].value = opt.text;
+	document.forms['secondForm'].submit();
        }
 function myFunc2($val) {
     alert($val);
