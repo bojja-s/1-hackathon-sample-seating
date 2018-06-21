@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -83,10 +81,16 @@ public class UserController {
 		if (logger.isInfoEnabled()){
 			logger.info("UserController buildUser" );
 		}
-		User user = User.builder().updatedAt(Calendar.getInstance().getTime()).userName(userForm.getEmail())
-				.firstName(userForm.getFirstName()).lastName(userForm.getLastName()).enable(true)
-				.location(userForm.getLocation()).country(userForm.getCountry()).password(passwordEncoder.encode(userForm.getPassword()))
-				.createdAt(Calendar.getInstance().getTime()).build();
+		User user = new User();
+		user.setFirstName(userForm.getFirstName());
+		user.setLastName(userForm.getLastName());
+		user.setLocation(userForm.getLocation());
+		user.setCountry(userForm.getCountry());
+		user.setPassword(passwordEncoder.encode(userForm.getPassword()));
+		user.setUserName(userForm.getEmail());
+		user.setCreatedAt(Calendar.getInstance().getTime());
+		user.setUpdatedAt(Calendar.getInstance().getTime());
+
 		if (logger.isInfoEnabled()){
 			logger.info( user.getUserName() );
 			//logger.info( user.getEmail() );
