@@ -87,12 +87,12 @@
 						</c:choose>
 					</c:forEach>
 				</form:select>
-				<form:hidden path="sectionId" value="1"/>
-				<form:hidden path="secretValue" value="103"/>
+				<form:hidden path="sectionId" value=""/>
+				<form:hidden path="secretValue" value=""/>
 			</div>
 			<br/>
 			<div>
-				<button id="bookTickets"  type="submit">Book Ticket</button>
+				<button id="bookTickets"  type="submit" onclick="myFunc2()">Book Ticket</button>
 			</div>
 			<br/>
 		</form:form>
@@ -111,8 +111,15 @@ function myFunc($val) {
 	alert(document.forms['secondForm']['secretValue'].value);
 	document.forms['firstForm'].submit();
        }
-function myFunc2($val) {
-    alert($val);
+function myFunc2() {
+	var sel = document.getElementById('sections');
+	var opt = sel.options[sel.selectedIndex];
+	alert(opt.value);
+	document.forms['secondForm']['sectionId'].value = opt.value;
+	alert(document.forms['secondForm']['sectionId'].value);
+	document.forms['secondForm']['secretValue'].value = opt.text;
+	alert(document.forms['secondForm']['secretValue'].value);
+	document.forms['secondForm'].submit();
    }       
 </script>
 	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
