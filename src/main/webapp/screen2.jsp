@@ -75,7 +75,7 @@
 			<form:form id="secondForm" method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">	
 			<label for="seats">Available Seats: ${seats.size()}</label>
 			<div>
-				<form:select id="seats" path="seatName" multiple="true" onchange="myFunc2(value)" size="5">
+				<form:select id="seats" path="seatName" multiple="true" size="5">
 					<c:forEach varStatus="loop" items="${seats}" var="seat">
 						<c:choose>
 							<c:when test="${loop.index eq 0}">
