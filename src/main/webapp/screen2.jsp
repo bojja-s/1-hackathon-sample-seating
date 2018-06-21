@@ -56,7 +56,7 @@
 			
 				<label for="sections">List of Sections: </label>
 				<form:form method="POST" id="firstForm" modelAttribute="sectionForm" action="/getsections" class="form-signin">
-				<form:select id="sections" name='role' path="sectionId" onchange="submit()">
+				<form:select id="sections" name='role' path="sectionId" onchange="myFunc(value)">
 					<c:forEach varStatus="loop" items="${sections}" var="section">
 						
 							<c:if test="${section.id != selectedSection}">
@@ -72,7 +72,7 @@
 </div><br/>
 
 		<div class="container2" id="signin" >			
-			<form:form method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">	
+			<form:form id="secondForm" method="POST" modelAttribute="sectionForm" action="/booktickets" class="form-signin">	
 			<label for="seats">Available Seats: ${seats.size()}</label>
 			<div>
 				<form:select id="seats" path="seatName" multiple="true" onchange="myFunc2(value)" size="5">
@@ -87,6 +87,7 @@
 						</c:choose>
 					</c:forEach>
 				</form:select>
+				<form:hidden path="sectionName" value=""/>
 			</div>
 			<br/>
 			<div>
@@ -100,7 +101,10 @@
 	<!-- /container -->
 	<script>
 function myFunc($val) {
-        alert($val);
+		alert(document.forms['firstForm']['sections'].selected);// = "Value";
+		document.forms['secondForm']['sectionName'].value = "Assigned Value";
+        alert(document.forms['secondForm']['sectionName'].value);
+        
        }
 function myFunc2($val) {
     alert($val);
