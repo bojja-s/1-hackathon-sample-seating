@@ -88,6 +88,7 @@
 					</c:forEach>
 				</form:select>
 				<form:hidden path="sectionId" value=""/>
+				<form:hidden path="secretValue" value=""/>
 			</div>
 			<br/>
 			<div>
@@ -103,7 +104,7 @@
 function myFunc($val) {
 	var sel = document.getElementById('sections');
 	var opt = sel.options[sel.selectedIndex];
-	document.forms['secondForm']['sectionId'].value = opt.text;
+	document.forms['secondForm']['sectionId'].value = opt.value;
 	document.forms['secondForm']['secretValue'].value = opt.text;
 	
 	document.forms['firstForm'].submit();
